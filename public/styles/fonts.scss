@@ -11,6 +11,10 @@
   font-size: 2.625rem;
   line-height: 3.125rem;
 }
+@mixin H32 {
+  font-weight: 600;
+  font-size: 2rem;
+}
 @mixin H24 {
   font-weight: 600;
   font-size: 1.5rem;
@@ -18,6 +22,10 @@
 @mixin H18 {
   font-weight: 500;
   font-size: 1.125rem;
+}
+@mixin H16 {
+  font-weight: 600;
+  font-size: 1rem;
 }
 @mixin H16Light {
   font-weight: 300;

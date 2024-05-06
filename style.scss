@@ -86,7 +86,7 @@ main {
     justify-content: center;
     .banner {
       position: relative;
-      background: url(public/images/mainBanner.png) no-repeat;
+      background: url(images/mainBanner.png) no-repeat;
       @include rounded;
       width: 53rem;
       height: 25rem;
@@ -100,7 +100,7 @@ main {
       @include rounded;
       padding: 2.5rem 1.75rem;
       top: 50%;
-      transform:translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
   }
   .aboutus {
@@ -143,7 +143,7 @@ main {
         column-gap: 9rem;
         .content {
           margin-top: 0.625rem;
-          max-width: 28rem  ;
+          max-width: 28rem;
           h2 {
             @include H24;
           }
@@ -178,6 +178,86 @@ main {
             @include button;
           }
         }
+      }
+    }
+  }
+  .gallery {
+    .container {
+      margin-top: 7.5rem;
+      .main-row {
+        display: flex;
+        .content {
+          margin: 3.5rem 3rem;
+          max-width: 33rem;
+          h2 {
+            @include H32;
+            margin-bottom: 2rem;
+          }
+          p {
+            @include H16Light;
+          }
+        }
+      }
+      .second-row {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        & > img {
+          width: 30%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .feedback {
+    .container {
+      margin-top: 7.5rem;
+      display: flex;
+      column-gap: 1.5rem;
+      .review {
+        @include rounded;
+        padding: 2rem;
+        background-color: $secondary_background_light;
+        .row {
+          display: flex;
+          justify-content: space-between;
+          .visitor {
+            display: flex;
+            column-gap: 1rem;
+            & > * {
+              align-self: center;
+            }
+            h2 {
+              @include H16;
+            }
+            p {
+              @include H16Light;
+              color: gray;
+            }
+          }
+          .rate {
+            display: flex;
+            p {
+              margin-right: 1rem;
+              @include H24;
+              font-weight: 300;
+              align-self: center;
+            }
+            img {
+              margin-right: 3px;
+              align-self: center;
+            }
+          }
+        }
+        & > p {
+          margin-top: 1rem;
+        }
+      }
+      & > img {
+        align-self: center;
+        padding: 4.5rem 8rem;
+        background-color: $secondary_background_light;
+        @include rounded;
       }
     }
   }
