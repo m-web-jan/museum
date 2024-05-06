@@ -6,10 +6,12 @@
 @mixin button {
   background-color: $blue;
   color: white;
-  padding: 10px 25px;
+  padding: 0.625rem 1.563rem;
   cursor: pointer;
   @include rounded;
   transition: .3s;
+  display: inline-block;
+  text-decoration: none;
   &:hover {
     transition: .3s;
     background-color: $blue_hover;

@@ -157,7 +157,28 @@ main {
     .btn {
       @include button;
       margin-top: 4rem;
-      display: inline-block;
+    }
+  }
+  .whyVisit {
+    margin-top: 7.5rem;
+    .container {
+      .card {
+        @include rounded;
+        display: flex;
+        justify-content: space-between;
+        background-color: $secondary_background_light;
+        .content {
+          align-self: center;
+          max-width: 38rem;
+          margin: 0 4.5rem;
+          p {
+            margin: 1rem 0;
+          }
+          .btn {
+            @include button;
+          }
+        }
+      }
     }
   }
 }
