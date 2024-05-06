@@ -1,0 +1,73 @@
+@mixin rounded {
+  border-radius: 0.375rem;
+}
+@mixin shadow {
+  box-shadow:
+    2.5px 2.5px 5px 0px rgba(17, 18, 20, 0.44),
+    -2.5px -2.5px 5px 0px rgba(38, 39, 43, 0.37);
+}
+@mixin blue-gradient {
+  background: linear-gradient(90deg, #01e1ff 0%, #2d83e9 45.84%, #213d9e 74.64%),
+    linear-gradient(90deg, #7abfe2 0%, #2530ff 88.08%);
+}
+
+@mixin pink-gradient {
+  background: linear-gradient(
+    90deg,
+    #ff8dfb 0%,
+    #a136c7 33.33%,
+    #9e219a 74.64%
+  );
+}
+
+@mixin whiteBlue-gradient {
+  background: linear-gradient(304deg, #2934d0 41.5%, #fcfcfe 112.75%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin whiteOrange-gradient {
+  background: linear-gradient(305deg, #ff7317 49.86%, #fcfcfe 125.28%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin orange-gradient {
+  background: linear-gradient(
+    90deg,
+    #ffc59f 0%,
+    #ff893c 45.84%,
+    #ff7317 74.64%
+  );
+}
+@mixin section-margin {
+  margin-bottom: 9.4rem;
+  @include mobile {
+    margin-bottom: 5rem;
+  }
+}
+@mixin section-padding {
+  padding-bottom: 9.4rem;
+  @include mobile {
+    padding-bottom: 5rem;
+  }
+}
+@mixin icon-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 5.25rem;
+  min-height: 5.25rem;
+  border-radius: 1rem;
+  background-image: $gradient-green;
+}
+@mixin arrow-back-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}

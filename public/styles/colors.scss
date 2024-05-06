@@ -1,0 +1,78 @@
+$orange: #ff7d27;
+$yellow: #f2c94c;
+$dirtyYellow: #696045;
+$green: #37a483;
+$white: #fbfbfb;
+$dirtyWhite: #f2f2f2;
+$black: #333333;
+$gray1: #525252;
+$gray2: #929292;
+$gray3: #ececec;
+$gray4: #585858;
+$gray5: #4e4e4e;
+$gray6: #b6b6b6;
+$gray7: #3b3b3b;
+$blue: #7289da;
+$blue2: #5b7ae5;
+$darkBlue: #3e4769;
+$redFone: #ff283c;
+$blueFone: #346be2;
+$pink: #ff7373;
+$lightPink: #6b4545;
+
+// Redesign colors:
+$N800: #17191c;
+$N700: #202328;
+$N600: #2f353d;
+$N500: #3f4752;
+$N400: #8993a4;
+$N300: #f4f5f7;
+$N200: #fafbfc;
+$N100: #ffffff;
+$P400: #ff7317;
+$P500: #ff7317;
+$P600: #db5510;
+$B500: #1874ff;
+$R500: #ff5630;
+$Y500: #ffab00;
+$Y700: #ff8b00;
+$S700: #077574;
+
+@mixin darkShadow {
+  box-shadow:
+    -2.5px -2.5px 5px rgba(38, 39, 43, 0.37),
+    2.5px 2.5px 5px rgba(17, 18, 20, 0.44);
+}
+$border: rgba(38, 39, 43, 0.37);
+
+$darkOverflow: #010101;
+$darkBase: #1f2023;
+$darkSurface: #27292d;
+$darkOverlayDark: #2d2f34;
+$darkOverlayDark-40: rgba(45, 47, 52, 0.4);
+$darkOverlayLight: #383b40;
+
+$gradient: linear-gradient(319deg, $S700 -177.59%, $N700 87.15%), $N700;
+$gradient-green: linear-gradient(140deg, #077574 -282.77%, #17191c 104.6%);
+$gradient-green-back: linear-gradient(-40deg, #077574 -282.77%, #17191c 104.6%);
+
+$primary: $orange;
+$secondary: $green;
+
+$background_light: $white;
+$background_dark: $darkBase;
+
+$text_light: $black;
+$text_dark: $white;
+
+$realBlack: #000000;
+$realWhite: #ffffff;
+
+$greyFone: rgba(206, 206, 206, 0.75);
+
+$emptiness: #fcfcfc;
+$jet: #353535;
+
+$HollyGreen: #0f9e73;
+
+$border_radius: 12px;

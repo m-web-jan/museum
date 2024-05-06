@@ -1,0 +1,15 @@
+@import './public/styles/colors.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+body {
+  background-color: $lightBackground;
+  color: white;
+  a {
+    color: red;
+    text-decoration: none;
+  }
+}
