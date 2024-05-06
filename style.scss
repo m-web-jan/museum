@@ -261,4 +261,37 @@ main {
       }
     }
   }
+  .slider {
+    .container {
+      padding: 0;
+      margin: 7.5rem 3rem 0 3rem;
+      .row {
+        display: flex;
+        justify-content: space-between;
+        h2 {
+          @include H32;
+        }
+        .btns {
+          display: flex;
+          column-gap: 2rem;
+          img {
+            cursor: pointer;
+          }
+        }
+      }
+      .slider_images {
+        margin-top: 3rem;
+        display: flex;
+        column-gap: 2.5rem;
+        transition: transform 0.3s ease-in-out;
+        height: 330px;
+        img {
+          width: 350px;
+          object-fit: cover;
+          @include rounded;
+        }
+      }
+      overflow-x: hidden;
+    }
+  }
 }
