@@ -28,8 +28,3 @@
     @content;
   }
 }
-@mixin customR($screen) {
-  @media (max-width: $screen + 'px') {
-    @content;
-  }
-}

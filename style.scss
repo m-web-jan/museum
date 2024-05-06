@@ -1,4 +1,7 @@
-@import './public/styles/colors.scss';
+@import "./public/styles/fonts.scss";
+@import "./public/styles/colors.scss";
+@import "./public/styles/grid.scss";
+@import "./public/styles/mixins.scss";
 
 * {
   padding: 0;
@@ -6,10 +9,155 @@
   font-family: sans-serif;
 }
 body {
-  background-color: $lightBackground;
-  color: white;
-  a {
-    color: red;
-    text-decoration: none;
+  background-color: $background_light;
+}
+
+.container {
+  @include container;
+}
+
+header {
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  .container {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    .logo {
+      display: flex;
+      column-gap: 8px;
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        align-self: center;
+      }
+      img {
+        width: 2.375rem;
+        align-self: center;
+      }
+    }
+    nav {
+      align-self: center;
+      margin-left: 9rem;
+      ul {
+        display: flex;
+        list-style: none;
+        column-gap: 2rem;
+        li a {
+          @include H18;
+          color: $text_light;
+          text-decoration: none;
+        }
+      }
+    }
+    .header_btns {
+      display: flex;
+      column-gap: 1.5rem;
+      margin-left: auto;
+      & * img {
+        cursor: pointer;
+      }
+      & > * {
+        display: flex;
+        align-self: center;
+        column-gap: 0.4rem;
+        @include H18;
+      }
+      .tickets {
+        background-color: $blue;
+        padding: 7px;
+        @include rounded;
+        text-decoration: none;
+        color: #ffffff;
+        img {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+main {
+  .main-banner {
+    .container {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    display: flex;
+    justify-content: center;
+    .banner {
+      position: relative;
+      background: url(public/images/mainBanner.png) no-repeat;
+      @include rounded;
+      width: 53rem;
+      height: 25rem;
+      margin-left: 18rem;
+    }
+    h2 {
+      position: absolute;
+      @include H48;
+      width: 30rem;
+      background-color: $secondary_background_light;
+      @include rounded;
+      padding: 2.5rem 1.75rem;
+      top: 50%;
+      transform:translate(-50%, -50%);
+    }
+  }
+  .aboutus {
+    .container {
+      margin-top: 7.5rem;
+      display: flex;
+    }
+    .content {
+      padding: 3.125rem 3.75rem;
+      h2 {
+        @include H42;
+        margin-bottom: 1rem;
+      }
+      p {
+        @include H16Light;
+      }
+    }
+  }
+  .ourExhibits {
+    margin-top: 7.5rem;
+    text-align: center;
+    h2 {
+      @include H42;
+      margin: 0.625rem 0 1.25rem 0;
+    }
+    p {
+      width: 53rem;
+      margin: 0 auto;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      .card {
+        &:nth-child(2n) {
+          margin-left: auto;
+        }
+        flex: 1;
+        margin-top: 3rem;
+        display: flex;
+        column-gap: 9rem;
+        .content {
+          margin-top: 0.625rem;
+          max-width: 28rem  ;
+          h2 {
+            @include H24;
+          }
+          p {
+            width: auto;
+            text-align: justify;
+          }
+        }
+      }
+    }
+    .btn {
+      @include button;
+      margin-top: 4rem;
+      display: inline-block;
+    }
   }
 }

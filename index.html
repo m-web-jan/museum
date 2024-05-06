@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,12 +9,112 @@
     <header>
       <div class="container">
         <div class="logo">
-          <img src="./public/images/logoBlack.png" alt="logo">
+          <img src="./images/logoBlack.png" alt="logo" />
           <h2>Берестье</h2>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="exhibits/index.html">Экспонаты</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="header_btns">
+          <div class="change-theme">
+            Светлая
+            <img src="images/toggleOn.png" alt="toggleOn" />
+          </div>
+          <div class="change-lng">
+            Русский
+            <img src="images/arrowDown.png" alt="arrow" />
+          </div>
+          <a href="#" class="tickets">
+            <img src="images/ticket.png" alt="ticket" />
+            Билеты
+          </a>
         </div>
       </div>
     </header>
-    
+    <main>
+      <section class="main-banner">
+        <div class="container">
+          <div class="banner">
+            <h2>Путешествие по истории Берестья</h2>
+          </div>
+        </div>
+      </section>
+      <section class="aboutus">
+        <div class="container">
+          <div class="content">
+            <h2>О Нас</h2>
+            <p>
+              Добро пожаловать в музей Берестье! Мы - увлеченная команда
+              профессионалов, посвятивших себя сохранению исторического наследия
+              и раскрытию его для публики. Наш музей - это не просто коллекция
+              артефактов, но место, где каждый предмет оживает с собственной
+              уникальной историей. Мы стремимся создать пространство, где
+              исследователи любого возраста могут расширить свои знания и
+              насладиться погружением в прошлое. Присоединяйтесь к нам, чтобы
+              обнаружить удивительный мир археологии и истории!
+            </p>
+          </div>
+          <img src="images/aboutusImg.png" alt="aboutUsImg" />
+        </div>
+      </section>
+      <section class="ourExhibits">
+        <div class="container">
+          <img src="images/logoBlack.png" alt="logo" />
+          <h2>ОТКРОЙТЕ ДЛЯ СЕБЯ ВСЕ НАШИ ЭКСПОНАТЫ</h2>
+          <p>
+            Погрузитесь в историю, узнайте о древних культурах и артефактах...
+            Музей Берестье приглашает вас посетить разнообразные экспозиции в
+            Бресте и регионах. В музее Берестье каждый найдет что-то для себя!
+          </p>
+          <div class="cards">
+            <div class="card">
+              <img src="images/exhibit1.png" alt="exhibit1" />
+              <div class="content">
+                <h2>Самшитовый гребень XIII века</h2>
+                <p>
+                  Уникальная находка — самшитовый гребень XIII века с
+                  кириллическим алфавитом. Этот гребень является старейшим
+                  «учебником» грамотности в Беларуси и свидетельствует о высоком
+                  уровне культуры и письменности в Берестье.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/exhibit2.png" alt="exhibit1" />
+              <div class="content">
+                <h2>Шахматная фигурка короля ХIII века</h2>
+                <p>
+                  Под названием расположен текст, описывающий экспонат. Это
+                  высокохудожественное изделие из кости, созданное с особым
+                  вниманием к деталям и отделке. В тексте также упоминается, что в
+                  Беларуси было найдено 70 шахматных фигур, и только 4 из них,
+                  включая берестейского шахматного короля, представляют собой
+                  изобразительные шахматы с реалистичными чертами, а не
+                  абстрактными фигурами.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="images/exhibit3.png" alt="exhibit1" />
+              <div class="content">
+                <h2>Биллоновый колт ХIII века</h2>
+                <p>
+                  Текст описывает уникальность и ценность колта как одного из
+                  наиболее дорогостоящих предметов в коллекции музея. Он был
+                  украшен символическим рисунком прорастающего зерна, и внутрь
+                  артефакта вкладывалась ткань, смоченная душистыми маслами.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btn">Смотреть еще</div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="./main.ts"></script>
   </body>
 </html>
