@@ -15,8 +15,6 @@ function animateSlider() {
   });
 
   nextButton.addEventListener("click", () => {
-    console.log(currentTranslateX);
-
     currentTranslateX -=
       -cardsCount + 3 !== currentTranslateX / cardWidth ? cardWidth : 0;
     slider.style.transform = `translateX(${currentTranslateX}px)`;

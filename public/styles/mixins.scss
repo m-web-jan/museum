@@ -1,7 +1,14 @@
 @import './colors.scss';
+@import './breakpoints.scss';
 
 @mixin rounded {
   border-radius: 0.625rem;
+}
+@mixin sectionSpace {
+  margin-top: 7.5rem;
+  @include mobile {
+    margin-top: 5rem;
+  }
 }
 @mixin button {
   background-color: $blue;
@@ -15,5 +22,20 @@
   &:hover {
     transition: .3s;
     background-color: $blue_hover;
+  }
+}
+@mixin secondaryButton {
+  border: 2px solid $blue;
+  color: #121212;
+  padding: 0.625rem 1.563rem;
+  cursor: pointer;
+  @include rounded;
+  transition: .3s;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    transition: .3s;
+    background-color: $blue;
+    color: white;
   }
 }

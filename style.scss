@@ -2,19 +2,7 @@
 @import "./public/styles/colors.scss";
 @import "./public/styles/grid.scss";
 @import "./public/styles/mixins.scss";
-
-* {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-}
-body {
-  background-color: $background_light;
-}
-
-.container {
-  @include container;
-}
+@import "./public/styles/common.scss";
 
 header {
   box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
@@ -105,7 +93,7 @@ main {
   }
   .aboutus {
     .container {
-      margin-top: 7.5rem;
+      @include sectionSpace;
       display: flex;
     }
     .content {
@@ -120,7 +108,7 @@ main {
     }
   }
   .ourExhibits {
-    margin-top: 7.5rem;
+    @include sectionSpace;
     text-align: center;
     h2 {
       @include H42;
@@ -160,7 +148,7 @@ main {
     }
   }
   .whyVisit {
-    margin-top: 7.5rem;
+    @include sectionSpace;
     .container {
       .card {
         @include rounded;
@@ -183,7 +171,7 @@ main {
   }
   .gallery {
     .container {
-      margin-top: 7.5rem;
+      @include sectionSpace;
       .main-row {
         display: flex;
         .content {
@@ -203,7 +191,7 @@ main {
         display: flex;
         justify-content: space-between;
         & > img {
-          width: 30%;
+          width: 32%;
           cursor: pointer;
         }
       }
@@ -211,7 +199,7 @@ main {
   }
   .feedback {
     .container {
-      margin-top: 7.5rem;
+      @include sectionSpace;
       display: flex;
       column-gap: 1.5rem;
       .review {
@@ -264,7 +252,7 @@ main {
   .slider {
     .container {
       padding: 0;
-      margin: 7.5rem 3rem 0 3rem;
+      margin: 7.5rem auto 0 auto;
       .row {
         display: flex;
         justify-content: space-between;
@@ -292,6 +280,127 @@ main {
         }
       }
       overflow-x: hidden;
+    }
+  }
+  .ourServices {
+    @include sectionSpace;
+    .container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 3.75rem;
+      .card {
+        display: flex;
+        justify-content: center;
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+          .content {
+            margin: 3rem -8rem 3rem 0;
+            z-index: 1;
+          }
+        }
+        .content {
+          background-color: $secondary_background_light;
+          @include rounded;
+          padding: 2.5rem;
+          margin: 3rem 0 3rem -8rem;
+          max-width: 27rem;
+          h2 {
+            @include H42;
+          }
+          p {
+            margin: 1.5rem 0;
+            line-height: 2rem;
+            text-align: justify;
+          }
+          .btn {
+            @include button;
+          }
+          text-align: center;
+        }
+      }
+    }
+  }
+  .posters {
+    @include sectionSpace;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      .poster {
+        position: relative;
+        background-color: $secondary_background_light;
+        @include rounded;
+        max-width: 27rem;
+        img {
+          width: 100%;
+        }
+        .date {
+          text-align: center;
+          background-color: white;
+          padding: 0.5rem 0.313rem;
+          @include rounded;
+          @include H16;
+          position: absolute;
+          right: 2rem;
+          margin-top: -2rem;
+        }
+        .content {
+          padding: 1.5rem 1rem;
+          h2 {
+          }
+          p {
+            padding: 1rem 0;
+          }
+          .btn {
+            @include secondaryButton;
+          }
+        }
+      }
+    }
+  }
+  .faq {
+    @include sectionSpace;
+    .container {
+      h2 {
+        @include H32;
+        margin-bottom: 3rem;
+      }
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: black;
+        margin: 2rem 0;
+      }
+      .question {
+        cursor: pointer;
+        @include H20;
+        margin: 1rem 0 2rem 0;
+        display: flex;
+        justify-content: space-between;
+        img {
+          transition: 0.3s ease;
+          align-self: center;
+        }
+      }
+      .answer {
+        margin: 1rem 0 2rem 0;
+        max-width: 50rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      input[type="radio"]:checked + label + .answer {
+        max-height: 50px;
+        transition: max-height 0.8s ease;
+      }
+      input[type="radio"]:checked + label {
+        img {
+          transform: rotate(45deg);
+          transition: 0.3s ease;
+        }
+      }
     }
   }
 }
