@@ -41,6 +41,10 @@ header {
       display: flex;
       column-gap: 1.5rem;
       margin-left: auto;
+      .change-lng {
+        border: none;
+        outline: none;
+      }
       & * img {
         cursor: pointer;
       }

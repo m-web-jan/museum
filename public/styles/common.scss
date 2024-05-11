@@ -9,6 +9,7 @@
 }
 body {
   background-color: $background_light;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   width: .5rem;
