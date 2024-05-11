@@ -403,4 +403,162 @@ main {
       }
     }
   }
+  .gosSlider {
+    @include sectionSpace;
+    background-color: $secondary_background_light;
+    .container {
+      padding: 1rem 0;
+      overflow: hidden;
+      width: 74rem;
+      .cards {
+        &:hover {
+          animation-play-state: paused;
+          cursor: pointer;
+        }
+        display: flex;
+        column-gap: 3.125rem;
+        margin: 0 auto;
+        animation: gosSliderAnimation 60s linear infinite;
+        .card {
+          text-decoration: none;
+          color: $text_light;
+          display: flex;
+          column-gap: 1.25rem;
+          img {
+            align-self: center;
+          }
+          .content {
+            align-self: center;
+            width: 11.5rem;
+            h2 {
+              @include H12;
+            }
+            p {
+              @include H10;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes gosSliderAnimation {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+footer {
+  .container {
+    padding: 2.25rem 0 1.5rem 0;
+    .row {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        .logo {
+          display: flex;
+          column-gap: 0.5rem;
+          img {
+            width: 2.25rem;
+          }
+          h2 {
+            @include H18;
+            align-self: center;
+          }
+        }
+        p {
+          @include H16Light;
+          max-width: 33.5rem;
+          margin-top: 1.25rem;
+          color: gray;
+        }
+      }
+      .right {
+        display: flex;
+        column-gap: 3.5rem;
+        nav {
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.75rem;
+          }
+          li {
+            @include H18;
+            a {
+              text-decoration: none;
+              color: $text_light;
+            }
+          }
+        }
+        .workingHours {
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.75rem;
+          h2 {
+            @include H18;
+          }
+          p {
+            @include H16Light;
+            color: gray;
+          }
+        }
+      }
+    }
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: #121212;
+      margin: 1rem 0;
+    }
+    .docs {
+      display: flex;
+      align-self: center;
+      a, p {
+        color: gray;
+        @include H16Light;
+        text-decoration: none;
+      }
+      .pipe {
+        width: 1px;
+        height: 13px;
+        background-color: #121212;
+        margin: 0 1rem;
+        align-self: center;
+      }
+    }
+    .btns {
+      display: flex;
+      column-gap: 1.5rem;
+      .social {
+        display: flex;
+        column-gap: 1rem;
+        img {
+          width: 1.625rem;
+        }
+        margin-right: 1.25rem;
+      }
+      select {
+        @include H18;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .theme, .lang {
+        display: flex;
+        column-gap: 5px;
+        h2 {
+          @include H18;
+          align-self: center;
+        }
+        img {
+          align-self: center;
+        }
+      }
+    }
+  }
 }

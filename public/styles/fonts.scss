@@ -35,6 +35,14 @@
   font-weight: 300;
   font-size: 1rem;
 }
+@mixin H12 {
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+@mixin H10 {
+  font-weight: 500;
+  font-size: 0.75rem;
+}
 
 // @mixin H1000 {
 //   font-family: 'Rubik', 'sans-serif';
