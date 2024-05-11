@@ -78,7 +78,7 @@ main {
     justify-content: center;
     .banner {
       position: relative;
-      background: url(./images/mainBanner.png) no-repeat;
+      background: url(/images/mainBanner.png) no-repeat;
       @include rounded;
       width: 53rem;
       height: 25rem;
