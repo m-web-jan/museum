@@ -1,15 +1,13 @@
 import "./style.scss";
+import data from './exhibits.json';
 
 const cards = document
   .getElementsByClassName("cards")[0]
   .getElementsByClassName("container")[0];
 
 async function getCards() {
-  let data = await fetch("./exhibits.json");
-  let json = await data.json();
-
-  for (let i = 0; i < json.length; i++) {
-    fillCard(json[i]);
+  for (let i = 0; i < data.length; i++) {
+    fillCard(data[i]);
   }
 }
 

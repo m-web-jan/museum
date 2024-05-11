@@ -1,8 +1,7 @@
 import { resolve } from "path";
-import json from '@rollup/plugin-json';
+import { defineConfig } from "vite";
 
-export default {
-  plugins: [json()],
+export default defineConfig ({
   build: {
     rollupOptions: {
       input: {
@@ -11,4 +10,4 @@ export default {
       },
     },
   },
-};
+});
