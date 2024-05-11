@@ -25,7 +25,7 @@ interface ICard {
 
 function fillCard(cardData: ICard) {
   const card = document.createElement("div");
-  card.onclick = (event) => {
+  card.onclick = () => {
     openModal(cardData);
   };
   card.classList.add("card");
