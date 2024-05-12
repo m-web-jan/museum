@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты</title>
     <link rel="icon" type="image/png" href="../images/whiteLogo.png" />
-    <title>Экспонаты</title>
   </head>
   <body>
     <header>
@@ -16,8 +16,8 @@
         <nav>
           <ul>
             <li><a href="../index.html">Главная</a></li>
-            <li><a href="#">Экспонаты</a></li>
-            <li><a href="../contacts/index.html">Контакты</a></li>
+            <li><a href="../exhibits/index.html">Экспонаты</a></li>
+            <li><a href="#">Контакты</a></li>
           </ul>
         </nav>
         <div class="header_btns">
@@ -38,18 +38,53 @@
     </header>
 
     <main>
-      <section class="banner">
+      <section class="contactsBanner">
         <div class="container">
-          <img
-            src="../images/exhibitsLightBanner.png"
-            alt=""
-            class="bannerImg"
-          />
-          <h1>Галерея Музейных Экспонатов</h1>
+          <div class="banner">
+            <div class="column">
+              <h2>Свяжитесь с нами — будем рады!</h2>
+              <img src="../images/contactsLightBanner1.png" alt="bannerImage" />
+            </div>
+            <div class="column">
+              <img src="../images/contactsLightBanner2.png" alt="bannerImage" />
+              <p>
+                Погрузитесь в мир знаний и открытий вместе с нами! Добро
+                пожаловать в музей 'Берестье', где культура и познание
+                переплетаются в увлекательном танце!
+              </p>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="cards">
-        <div class="container"></div>
+      <section class="contactInfo">
+        <div class="container">
+          <h2>Археологический музей «Берестье»</h2>
+          <div class="info">
+            <div class="content">
+              <p>
+                Наш адерс: г. Брест, проезд Крепостной, 15<br />
+                Режим работы:<br />
+                Сентябрь-Апрель: с 10.00 до 18.00 (касса до 17.30)Май-Август: с
+                10.00 до 19.00 (касса до 18.30)<br />
+                Без выходных<br />
+                Телефон: +375 162 53 10 11
+              </p>
+              <a href="#" class="btn">
+                <img src="../public/images/ticket.png" alt="ticketIcon">
+                <span>
+                  Билеты
+                </span>
+              </a>
+              <div class="social">
+                <a href="#"><img src="../public/images/vk.png" alt="vkIcon"></a>
+                <a href="#"><img src="../public/images/facebook.png" alt="facebookIcon"></a>
+                <a href="#"><img src="../public/images/telegram.png" alt="telegramIcon"></a>
+                <a href="#"><img src="../public/images/instagram.png" alt="instagramIcon"></a>
+              </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.9953525339474!2d23.652135712180037!3d52.07981446860928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47210ba32d3305b1%3A0x1b4da7b3633ff332!2z0JDRgNGF0LXQvtC70L7Qs9C40YfQtdGB0LrQuNC5INC80YPQt9C10Lkg0JHQtdGA0LXRgdGC0YzQtQ!5e0!3m2!1sru!2sby!4v1715512803832!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -115,29 +150,6 @@
         </div>
       </div>
     </footer>
-
-    <section class="modal">
-      <div class="modalBody">
-        <div class="modalContent">
-          <img src="../images/ex1.png" alt="modalImage" />
-          <div class="modalText">
-            <h2>Самшитовый гребень</h2>
-            <p>
-              Уникальная находка — самшитовый гребень XIII века с кириллическим
-              алфавитом. Этот гребень является старейшим «учебником» грамотности
-              в Беларуси и свидетельствует о высоком уровне культуры и
-              письменности в Берестье.
-            </p>
-            <ul>
-              <li>Период: <span>XIII век</span></li>
-              <li>Материал: <span>дерево</span></li>
-              <li>Размеры: <span>20 x 20 см</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="modalBtn">Закрыть</div>
-      </div>
-    </section>
-    <script type="module" src="/exhibits/exhibits.ts"></script>
+    <script type="module" src="./contacts.ts"></script>
   </body>
 </html>

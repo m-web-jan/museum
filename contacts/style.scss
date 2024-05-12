@@ -1,0 +1,78 @@
+@import "./public/styles/fonts.scss";
+@import "./public/styles/colors.scss";
+@import "./public/styles/grid.scss";
+@import "../public/styles/mixins.scss";
+@import "./public/styles/common.scss";
+
+header {
+  @include header;
+}
+
+main {
+  .contactsBanner {
+    margin-top: 3rem;
+    .container {
+      .banner {
+        .column {
+          max-width: 42rem;
+        }
+        display: flex;
+        justify-content: space-between;
+        h2 {
+          @include H48Light;
+          max-width: 36rem;
+          margin-bottom: 1.25rem;
+        }
+        p {
+          padding: 1.5rem 1rem;
+          @include H32Light;
+        }
+      }
+    }
+  }
+  .contactInfo {
+    @include sectionSpace;
+    .container {
+      h2 {
+        @include H96Light;
+      }
+      .info {
+        margin-top: 3rem;
+        display: flex;
+        column-gap: 2rem;
+        .content {
+          max-width: 30rem;
+          p {
+            @include H18;
+            line-height: 2rem;
+          }
+          .btn {
+            margin: 3rem 0;
+            @include button;
+            span {
+              align-self: center;
+              vertical-align: text-top;
+              margin-left: 5px;
+            }
+          }
+          .social {
+            display: flex;
+            column-gap: 1.5rem;
+            img {
+              width: 3rem;
+            }
+          }
+        }
+        iframe {
+          width: 100%;
+          border-radius: 0.625rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  @include sectionSpace;
+  @include footer;
+}

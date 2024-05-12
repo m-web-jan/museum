@@ -1,8 +1,17 @@
 @import './colors.scss';
 @import './breakpoints.scss';
 
+@mixin H96Light {
+  font-weight: 300;
+  font-size: 6rem;
+}
 @mixin H48 {
   font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+@mixin H48Light {
+  font-weight: 300;
   font-size: 3rem;
   line-height: 3.25rem;
 }
@@ -13,6 +22,10 @@
 }
 @mixin H32 {
   font-weight: 600;
+  font-size: 2rem;
+}
+@mixin H32Light {
+  font-weight: 300;
   font-size: 2rem;
 }
 @mixin H24 {
