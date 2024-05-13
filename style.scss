@@ -289,8 +289,6 @@ main {
         }
         .content {
           padding: 1.5rem 1rem;
-          h2 {
-          }
           p {
             padding: 1rem 0;
           }
@@ -353,7 +351,7 @@ main {
     .container {
       padding: 1rem 0;
       overflow: hidden;
-      width: 74rem;
+      max-width: 74rem;
       .cards {
         &:hover {
           animation-play-state: paused;
