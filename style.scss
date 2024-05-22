@@ -13,16 +13,20 @@ main {
     .container {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
     display: flex;
     justify-content: center;
     .banner {
       position: relative;
-      background: url(/images/mainBanner.png) no-repeat;
+      background: url(./images/mainBanner.png) no-repeat;
       @include rounded;
-      width: 53rem;
+      width: 80%;
+      margin-left: 150px;
+      // width: 53rem;
       height: 25rem;
-      margin-left: 18rem;
     }
     h2 {
       position: absolute;
@@ -32,13 +36,17 @@ main {
       @include rounded;
       padding: 2.5rem 1.75rem;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-30%, -50%);
     }
   }
   .aboutus {
     .container {
       @include sectionSpace;
       display: flex;
+    }
+    img {
+      align-self: start;
+      width: 50%;
     }
     .content {
       padding: 3.125rem 3.75rem;
@@ -59,7 +67,7 @@ main {
       margin: 0.625rem 0 1.25rem 0;
     }
     p {
-      width: 53rem;
+      max-width: 53rem;
       margin: 0 auto;
     }
     .cards {
@@ -68,6 +76,10 @@ main {
       .card {
         &:nth-child(2n) {
           margin-left: auto;
+        }
+        img {
+          align-self: center;
+          max-width: 40%;
         }
         flex: 1;
         margin-top: 3rem;
@@ -99,7 +111,12 @@ main {
         display: flex;
         justify-content: space-between;
         background-color: $secondary_background_light;
+        img {
+          align-self: start;
+          max-width: 50%;
+        }
         .content {
+          padding: 1rem 0;
           align-self: center;
           max-width: 38rem;
           margin: 0 4.5rem;
@@ -117,6 +134,10 @@ main {
     .container {
       @include sectionSpace;
       .main-row {
+        & > img {
+          max-width: 50%;
+          align-self: center;
+        }
         display: flex;
         .content {
           margin: 3.5rem 3rem;
@@ -186,8 +207,7 @@ main {
         }
       }
       & > img {
-        align-self: center;
-        padding: 4.5rem 8rem;
+        padding: 4.5rem 6rem;
         background-color: $secondary_background_light;
         @include rounded;
       }
@@ -195,7 +215,6 @@ main {
   }
   .slider {
     .container {
-      padding: 0;
       margin: 7.5rem auto 0 auto;
       .row {
         display: flex;
@@ -233,6 +252,11 @@ main {
       flex-direction: column;
       row-gap: 3.75rem;
       .card {
+        img {
+          width: 50%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
         display: flex;
         justify-content: center;
         &:nth-child(2n) {
@@ -247,7 +271,7 @@ main {
           @include rounded;
           padding: 2.5rem;
           margin: 3rem 0 3rem -8rem;
-          max-width: 27rem;
+          width: 50%;
           h2 {
             @include H42;
           }
@@ -268,7 +292,9 @@ main {
     @include sectionSpace;
     .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
       .poster {
         position: relative;
         background-color: $secondary_background_light;

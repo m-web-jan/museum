@@ -125,8 +125,23 @@
 @mixin footer {
   box-shadow: 0 -2.5px 5px rgba(0, 0, 0, 0.25);
   .container {
-    padding: 2.25rem 0 1.5rem 0;
+    padding: 2.25rem 3rem 1.5rem 3rem;
+    @include laptop {
+      .row2 {
+        flex-direction: column-reverse !important;
+        .docs {
+          align-self: auto;
+          margin-top: 1rem;
+        }
+        .btns {
+          align-self: flex-start;
+        }
+      }
+    }
     .row {
+      @include laptop {
+        flex-direction: column;
+      }
       display: flex;
       justify-content: space-between;
       .left {
@@ -142,6 +157,9 @@
           }
         }
         p {
+          @include laptop {
+            font-size: 0.75rem;
+          }
           @include H16Light;
           max-width: 33.5rem;
           margin-top: 1.25rem;
@@ -150,8 +168,14 @@
       }
       .right {
         display: flex;
+        @include laptop {
+          flex-direction: column;
+        }
         column-gap: 3.5rem;
         nav {
+          @include laptop {
+            padding: 1rem 0;
+          }
           ul {
             list-style: none;
             display: flex;
@@ -167,6 +191,9 @@
           }
         }
         .workingHours {
+          @include laptop {
+            display: none;
+          }
           display: flex;
           flex-direction: column;
           row-gap: 0.75rem;
@@ -185,10 +212,23 @@
       height: 1px;
       background-color: #121212;
       margin: 1rem 0;
+      @include laptop {
+        display: none;
+      }
     }
     .docs {
       display: flex;
       align-self: center;
+      @include laptop {
+        flex-direction: column-reverse;
+        row-gap: 0.5rem;
+        p {
+          border-bottom: 1px solid #2F353D;
+          font-size: 0.75rem;
+          padding-bottom: 5px;
+          width: 100%;
+        }
+      }
       a,
       p {
         color: gray;
@@ -201,11 +241,18 @@
         background-color: #121212;
         margin: 0 1rem;
         align-self: center;
+        @include laptop {
+          display: none;
+        }
       }
     }
     .btns {
       display: flex;
       column-gap: 1.5rem;
+      @include laptop {
+        flex-direction: column;
+        row-gap: 1.5rem;
+      }
       .social {
         display: flex;
         column-gap: 1rem;
