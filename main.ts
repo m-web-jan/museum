@@ -82,22 +82,34 @@ gallery();
 // Галерея
 
 // Переключатель тем
-document.body.onload = () => {
+document.body.onload = async () => {
   const currentTheme = localStorage.getItem("theme");
-  const theme = document.getElementsByTagName("link")[2] as HTMLLinkElement;
-  // const theme = document.getElementsByClassName("themeLink")[0] as HTMLLinkElement;
+  const themeLink = document.getElementById("theme") as HTMLLinkElement;
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
 
+  const loadStyle = async (stylePath: string) => {
+    const oldLink = document.querySelector('#theme') as HTMLLinkElement;
+    if (oldLink) {
+      oldLink.parentNode?.removeChild(oldLink);
+    }
+
+    const newLink = document.createElement('link');
+    newLink.rel = 'stylesheet';
+    newLink.id = 'theme';
+    newLink.href = stylePath;
+    document.head.appendChild(newLink);
+  };
+
   if (currentTheme === "dark") {
     switchMode.checked = true;
-    theme.href = "./styleD.scss";
+    await loadStyle('./styleD.scss');
     changeLogo("logoWhite.png");
     themeText.innerText = "Темная";
   } else {
     switchMode.checked = false;
-    theme.href = "./styleL.scss";
+    await loadStyle('./styleL.scss');
     changeLogo("logoBlack.png");
     themeText.innerText = "Светлая";
   }
@@ -107,20 +119,32 @@ let switchMode = document.getElementsByClassName(
   "change-theme__input"
 )[0] as HTMLInputElement;
 
-switchMode.onchange = () => {
-  const theme = document.getElementsByTagName("link")[2] as HTMLLinkElement;
+switchMode.onchange = async () => {
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
 
-  if (theme?.getAttribute("href") === "./styleL.scss") {
+  const loadStyle = async (stylePath: string) => {
+    const oldLink = document.querySelector('#theme') as HTMLLinkElement;
+    if (oldLink) {
+      oldLink.parentNode?.removeChild(oldLink);
+    }
+
+    const newLink = document.createElement('link');
+    newLink.rel = 'stylesheet';
+    newLink.id = 'theme';
+    newLink.href = stylePath;
+    document.head.appendChild(newLink);
+  };
+
+  if (switchMode.checked) {
     localStorage.setItem("theme", "dark");
-    theme.href = "./styleD.scss";
+    await loadStyle('./styleD.scss');
     changeLogo("logoWhite.png");
     themeText.innerText = "Темная";
   } else {
     localStorage.setItem("theme", "light");
-    theme.href = "./styleL.scss";
+    await loadStyle('./styleL.scss');
     changeLogo("logoBlack.png");
     themeText.innerText = "Светлая";
   }
