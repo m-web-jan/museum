@@ -84,7 +84,8 @@ gallery();
 // Переключатель тем
 document.body.onload = () => {
   const currentTheme = localStorage.getItem("theme");
-  const theme = document.getElementsByClassName("themeLink")[0] as HTMLLinkElement;
+  const theme = document.getElementsByTagName("link")[0] as HTMLLinkElement;
+  // const theme = document.getElementsByClassName("themeLink")[0] as HTMLLinkElement;
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
@@ -107,7 +108,7 @@ let switchMode = document.getElementsByClassName(
 )[0] as HTMLInputElement;
 
 switchMode.onchange = () => {
-  const theme = document.getElementsByClassName("themeLink")[0] as HTMLLinkElement;
+  const theme = document.getElementsByTagName("link")[0] as HTMLLinkElement;
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;

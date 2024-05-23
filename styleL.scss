@@ -27,7 +27,7 @@ main {
     justify-content: center;
     .banner {
       position: relative;
-      background: url(./images/mainBanner.png) no-repeat;
+      background: url(../images/mainBanner.png) no-repeat;
       @include rounded;
       width: 80%;
       margin-left: 150px;
@@ -69,7 +69,7 @@ main {
         font-weight: 300;
       }
       .banner {
-        background: url(./images/mainMobBanner.png) no-repeat;
+        background: url(../images/mainMobBanner.png) no-repeat;
         background-size: cover;
         border-radius: 0;
         width: 100%;
