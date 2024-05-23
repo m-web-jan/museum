@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import './colorsD.scss';
 @import './breakpoints.scss';
 
 @mixin rounded {
@@ -56,6 +56,7 @@
         font-size: 18px;
         font-weight: 600;
         align-self: center;
+        color: $text_dark;
       }
       img {
         width: 2.375rem;
@@ -74,7 +75,7 @@
         column-gap: 2rem;
         li a {
           @include H18;
-          color: $text_light;
+          color: $text_dark;
           text-decoration: none;
         }
       }
@@ -86,7 +87,61 @@
       display: flex;
       column-gap: 1.5rem;
       margin-left: auto;
+      .themeText {
+        user-select: none;
+        color: $text_dark;
+        cursor: pointer;
+      }
+      .change-theme {
+        align-self: center;
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 15px;
+        .change-theme__input {
+          height: 0;
+          width: 0;
+          opacity: 0;
+        }
+        .change-theme__slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: 50px;
+          background-color: #121212;
+          transition: .4s;
+        }
+        .change-theme__slider::before {
+          content: "";
+          position: absolute;
+          cursor: pointer;
+          left: 2.5px;
+          bottom: 2.5px;
+          height: 10px;
+          width: 10px;
+          border-radius: 34px;
+          background-color: white;
+          transition: .4s;
+        }
+        .change-theme__input:focus + .change-theme__slider {
+          box-shadow: 0 0 1px white;
+        }
+        .change-theme__input:checked + .change-theme__slider {
+          background-color: white;
+        }
+        .change-theme__input:checked + .change-theme__slider::before {
+          transform: translateX(15px);
+          background-color: #121212;
+          -webkit-transform: translateX(15px);
+          -ms-transform: translateX(15px);
+        }
+      }
       .change-lng {
+        background-color: $background_dark;
+        color: $text_dark;
         border: none;
         outline: none;
       }
@@ -146,6 +201,7 @@
       justify-content: space-between;
       .left {
         .logo {
+          color: $text_dark;
           display: flex;
           column-gap: 0.5rem;
           img {
@@ -186,11 +242,12 @@
             @include H18;
             a {
               text-decoration: none;
-              color: $text_light;
+              color: $text_dark;
             }
           }
         }
         .workingHours {
+          color: $text_dark;
           @include laptop {
             display: none;
           }
@@ -210,7 +267,7 @@
     .line {
       width: 100%;
       height: 1px;
-      background-color: #121212;
+      background-color: white;
       margin: 1rem 0;
       @include laptop {
         display: none;
@@ -266,18 +323,6 @@
         border: none;
         outline: none;
         cursor: pointer;
-      }
-      .theme,
-      .lang {
-        display: flex;
-        column-gap: 5px;
-        h2 {
-          @include H18;
-          align-self: center;
-        }
-        img {
-          align-self: center;
-        }
       }
     }
   }

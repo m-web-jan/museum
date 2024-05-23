@@ -1,0 +1,335 @@
+@import './colorsL.scss';
+@import './breakpoints.scss';
+
+@mixin rounded {
+  border-radius: 0.625rem;
+}
+@mixin sectionSpace {
+  margin-top: 7.5rem;
+  @include mobile {
+    margin-top: 5rem;
+  }
+}
+@mixin button {
+  background-color: $blue;
+  color: white;
+  padding: 0.625rem 1.563rem;
+  cursor: pointer;
+  @include rounded;
+  transition: .3s;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    transition: .3s;
+    background-color: $blue_hover;
+  }
+}
+@mixin secondaryButton {
+  border: 2px solid $blue;
+  color: #121212;
+  padding: 0.625rem 1.563rem;
+  cursor: pointer;
+  @include rounded;
+  transition: .3s;
+  display: inline-block;
+  text-decoration: none;
+  &:hover {
+    transition: .3s;
+    background-color: $blue;
+    color: white;
+  }
+}
+
+@mixin header {
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  .container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include laptop {
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      column-gap: 8px;
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        align-self: center;
+      }
+      img {
+        width: 2.375rem;
+        align-self: center;
+      }
+    }
+    nav {
+      @include laptop {
+        display: none;
+      }
+      align-self: center;
+      margin-left: 9rem;
+      ul {
+        display: flex;
+        list-style: none;
+        column-gap: 2rem;
+        li a {
+          @include H18;
+          color: $text_light;
+          text-decoration: none;
+        }
+      }
+    }
+    .header_btns {
+      @include laptop {
+        display: none;
+      }
+      display: flex;
+      column-gap: 1.5rem;
+      margin-left: auto;
+      .themeText {
+        user-select: none;
+        cursor: pointer;
+      }
+      .change-theme {
+        align-self: center;
+        display: inline-block;
+        position: relative;
+        width: 30px;
+        height: 15px;
+        .change-theme__input {
+          height: 0;
+          width: 0;
+          opacity: 0;
+        }
+        .change-theme__slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          border-radius: 50px;
+          background-color: #121212;
+          transition: .4s;
+        }
+        .change-theme__slider::before {
+          content: "";
+          position: absolute;
+          cursor: pointer;
+          left: 2.5px;
+          bottom: 2.5px;
+          height: 10px;
+          width: 10px;
+          border-radius: 34px;
+          background-color: white;
+          transition: .4s;
+        }
+        .change-theme__input:focus + .change-theme__slider {
+          box-shadow: 0 0 1px white;
+        }
+        .change-theme__input:checked + .change-theme__slider {
+          background-color: white;
+        }
+        .change-theme__input:checked + .change-theme__slider::before {
+          transform: translateX(15px);
+          background-color: #121212;
+          -webkit-transform: translateX(15px);
+          -ms-transform: translateX(15px);
+        }
+      }
+      .change-lng {
+        border: none;
+        outline: none;
+      }
+      & * img {
+        cursor: pointer;
+      }
+      & > * {
+        display: flex;
+        align-self: center;
+        column-gap: 0.4rem;
+        @include H18;
+      }
+      .tickets {
+        background-color: $blue;
+        padding: 7px;
+        @include rounded;
+        text-decoration: none;
+        color: #ffffff;
+        img {
+          align-self: center;
+        }
+      }
+    }
+    .burgerMenu {
+      cursor: pointer;
+      width: 1.5rem;
+      height: 1.25rem;
+      display: none;
+      @include laptop {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin footer {
+  box-shadow: 0 -2.5px 5px rgba(0, 0, 0, 0.25);
+  .container {
+    padding: 2.25rem 3rem 1.5rem 3rem;
+    @include laptop {
+      .row2 {
+        flex-direction: column-reverse !important;
+        .docs {
+          align-self: auto;
+          margin-top: 1rem;
+        }
+        .btns {
+          align-self: flex-start;
+        }
+      }
+    }
+    .row {
+      @include laptop {
+        flex-direction: column;
+      }
+      display: flex;
+      justify-content: space-between;
+      .left {
+        .logo {
+          display: flex;
+          column-gap: 0.5rem;
+          img {
+            width: 2.25rem;
+          }
+          h2 {
+            @include H18;
+            align-self: center;
+          }
+        }
+        p {
+          @include laptop {
+            font-size: 0.75rem;
+          }
+          @include H16Light;
+          max-width: 33.5rem;
+          margin-top: 1.25rem;
+          color: gray;
+        }
+      }
+      .right {
+        display: flex;
+        @include laptop {
+          flex-direction: column;
+        }
+        column-gap: 3.5rem;
+        nav {
+          @include laptop {
+            padding: 1rem 0;
+          }
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.75rem;
+          }
+          li {
+            @include H18;
+            a {
+              text-decoration: none;
+              color: $text_light;
+            }
+          }
+        }
+        .workingHours {
+          @include laptop {
+            display: none;
+          }
+          display: flex;
+          flex-direction: column;
+          row-gap: 0.75rem;
+          h2 {
+            @include H18;
+          }
+          p {
+            @include H16Light;
+            color: gray;
+          }
+        }
+      }
+    }
+    .line {
+      width: 100%;
+      height: 1px;
+      background-color: #121212;
+      margin: 1rem 0;
+      @include laptop {
+        display: none;
+      }
+    }
+    .docs {
+      display: flex;
+      align-self: center;
+      @include laptop {
+        flex-direction: column-reverse;
+        row-gap: 0.5rem;
+        p {
+          border-bottom: 1px solid #2F353D;
+          font-size: 0.75rem;
+          padding-bottom: 5px;
+          width: 100%;
+        }
+      }
+      a,
+      p {
+        color: gray;
+        @include H16Light;
+        text-decoration: none;
+      }
+      .pipe {
+        width: 1px;
+        height: 13px;
+        background-color: #121212;
+        margin: 0 1rem;
+        align-self: center;
+        @include laptop {
+          display: none;
+        }
+      }
+    }
+    .btns {
+      display: flex;
+      column-gap: 1.5rem;
+      @include laptop {
+        flex-direction: column;
+        row-gap: 1.5rem;
+      }
+      .social {
+        display: flex;
+        column-gap: 1rem;
+        img {
+          width: 1.625rem;
+        }
+        margin-right: 1.25rem;
+      }
+      select {
+        @include H18;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .theme,
+      .lang {
+        display: flex;
+        column-gap: 5px;
+        h2 {
+          @include H18;
+          align-self: center;
+        }
+        img {
+          align-self: center;
+        }
+      }
+    }
+  }
+}

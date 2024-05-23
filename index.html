@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Берестье</title>
     <link rel="icon" type="image/png" href="images/whiteLogo.png" />
+    <link rel="stylesheet" href="./styleL.scss" id="theme" />
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="./images/logoBlack.png" alt="logo" />
+          <img class="logoImg" src="./images/logoBlack.png" alt="logo" />
           <h2>Берестье</h2>
         </div>
         <nav>
@@ -21,10 +22,17 @@
           </ul>
         </nav>
         <div class="header_btns">
-          <div class="change-theme">
-            Светлая
-            <img src="images/toggleOn.png" alt="toggleOn" />
-          </div>
+          <label class="switch" for="headerTheme">
+            <p class="themeText">Светлая</p>
+            <label class="change-theme">
+              <input
+                type="checkbox"
+                class="change-theme__input"
+                id="headerTheme"
+              />
+              <span class="change-theme__slider"></span>
+            </label>
+          </label>
           <select name="" id="" class="change-lng">
             <option value="rus">Русский</option>
             <option value="eng">Белорусский</option>
@@ -71,7 +79,7 @@
       </section>
       <section class="ourExhibits">
         <div class="container">
-          <img src="images/logoBlack.png" alt="logo" />
+          <img class="logoImg" src="images/logoBlack.png" alt="logo" />
           <h2>ОТКРОЙТЕ ДЛЯ СЕБЯ ВСЕ НАШИ ЭКСПОНАТЫ</h2>
           <p>
             Погрузитесь в историю, узнайте о древних культурах и артефактах...
@@ -189,7 +197,7 @@
               Брест очень советую!<br />Спасибо, что храните историю!
             </p>
           </div>
-          <img src="images/logoBlack.png" alt="logo" />
+          <img class="logoImg" src="images/logoBlack.png" alt="logo" />
         </div>
       </section>
       <section class="slider">
@@ -428,7 +436,7 @@
         <div class="row">
           <div class="left">
             <div class="logo">
-              <img src="images/logoBlack.png" alt="logoImg" />
+              <img class="logoImg" src="images/logoBlack.png" alt="logoImg" />
               <h2>Берестье</h2>
             </div>
             <p>
@@ -481,14 +489,6 @@
                 ><img src="images/instagram.png" alt="instagram"
               /></a>
             </div>
-            <div class="theme">
-              <h2>Светлая</h2>
-              <img src="images/toggleOn.png" alt="toggleIcon" />
-            </div>
-            <select name="" id="" class="lang">
-              <option value="rus">Русский</option>
-              <option value="eng">Белорусский</option>
-            </select>
           </div>
         </div>
       </div>

@@ -1,13 +1,19 @@
+@import "./public/styles/colorsL.scss";
 @import "./public/styles/fonts.scss";
-@import "./public/styles/colors.scss";
 @import "./public/styles/grid.scss";
-@import "./public/styles/mixins.scss";
+@import "./public/styles/mixinsL.scss";
 @import "./public/styles/common.scss";
 
 header {
   @include header;
 }
-
+::-webkit-scrollbar-thumb {
+  background-color: $secondary_background_light;
+}
+body {
+  transition: .5s;
+  background-color: $background_light;
+}
 main {
   .main-banner {
     .container {
@@ -26,6 +32,9 @@ main {
       width: 80%;
       margin-left: 150px;
       height: 25rem;
+      p {
+        display: none;
+      }
     }
     h2 {
       @include H48;

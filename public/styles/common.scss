@@ -1,14 +1,9 @@
-@import "./mixins.scss";
-@import "./colors.scss";
-@import "./grid.scss";
-
 * {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
 }
 body {
-  background-color: $background_light;
   scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
@@ -20,7 +15,6 @@ body {
   cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $secondary_background_light;
   @include rounded;
 }
 .container {

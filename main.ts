@@ -1,5 +1,4 @@
-import "./style.scss";
-
+// Слайдер
 function animateSlider() {
   const slider = document.querySelector("#sliderCards") as HTMLElement;
   const nextButton = document.querySelector("#sliderBtnRight") as HTMLElement;
@@ -22,6 +21,7 @@ function animateSlider() {
 }
 
 animateSlider();
+// Слайдер
 
 const galleryData = [
   {
@@ -50,6 +50,7 @@ const galleryData = [
   },
 ];
 
+// Галерея
 function gallery() {
   let galleryImages = document
     .querySelector(".gallery")
@@ -78,3 +79,57 @@ function gallery() {
 }
 
 gallery();
+// Галерея
+
+// Переключатель тем
+document.body.onload = () => {
+  const currentTheme = localStorage.getItem("theme");
+  const theme = document.getElementById("theme") as HTMLLinkElement;
+  const themeText = document.getElementsByClassName(
+    "themeText"
+  )[0] as HTMLElement;
+
+  if (currentTheme === 'dark') {
+    switchMode.checked = true;
+    theme.href = "./styleD.scss";
+    changeLogo("logoWhite.png");
+    themeText.innerText = "Темная";
+  } else {
+    switchMode.checked = false;
+    theme.href = "./styleL.scss";
+    changeLogo("logoBlack.png");
+    themeText.innerText = "Светлая";
+  }
+}
+
+let switchMode = document.getElementsByClassName(
+  "change-theme__input"
+)[0] as HTMLInputElement;
+
+switchMode.onchange = () => {
+  const theme = document.getElementById("theme") as HTMLLinkElement;
+  const themeText = document.getElementsByClassName(
+    "themeText"
+  )[0] as HTMLElement;
+
+  if (theme?.getAttribute("href") === "./styleL.scss") {
+    localStorage.setItem("theme", "dark");
+    theme.href = "./styleD.scss";
+    changeLogo("logoWhite.png");
+    themeText.innerText = "Темная";
+  } else {
+    localStorage.setItem("theme", "light");
+    theme.href = "./styleL.scss";
+    changeLogo("logoBlack.png");
+    themeText.innerText = "Светлая";
+  }
+};
+
+function changeLogo(newPath: string) {
+  const logos = document.getElementsByClassName("logoImg");
+  for (let i = 0; i < logos.length; i++) {
+    const logoImg = logos[i] as HTMLImageElement;
+    logoImg.src = `images/${newPath}`;
+  }
+}
+// Переключатель тем
