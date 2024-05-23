@@ -25,24 +25,68 @@ main {
       @include rounded;
       width: 80%;
       margin-left: 150px;
-      // width: 53rem;
       height: 25rem;
     }
     h2 {
-      position: absolute;
       @include H48;
       width: 30rem;
       background-color: $secondary_background_light;
       @include rounded;
       padding: 2.5rem 1.75rem;
+      position: absolute;
       top: 50%;
       transform: translate(-30%, -50%);
+    }
+    @include tablet {
+      h2 {
+        @include H24;
+        color: $text_light2;
+        background-color: #00000000;
+        z-index: 10;
+        padding: 0;
+        transform: translateY(-50%);
+        text-align: center;
+        line-height: 2rem;
+        max-width: 18rem;
+      }
+      p {
+        position: absolute;
+        top: 60%;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+        color: $text_light2;
+        margin-top: 0.5rem;
+        @include H12;
+        font-weight: 300;
+      }
+      .banner {
+        background: url(./images/mainMobBanner.png) no-repeat;
+        background-size: cover;
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        padding: 0;
+      }
     }
   }
   .aboutus {
     .container {
       @include sectionSpace;
       display: flex;
+      @include tablet {
+        flex-direction: column;
+        .content {
+          padding: 0;
+          margin-bottom: 1.5rem;
+        }
+        img {
+          width: 100%;
+        }
+      }
     }
     img {
       align-self: start;
@@ -102,6 +146,25 @@ main {
       @include button;
       margin-top: 4rem;
     }
+    @include tablet {
+      .cards {
+        .card {
+          flex-direction: column;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+      h2 {
+        @include H24;
+        margin: 0.625rem 0 1.25rem 0;
+        line-height: 1.5rem;
+      }
+      p {
+        @include H12;
+        font-weight: 300;
+      }
+    }
   }
   .whyVisit {
     @include sectionSpace;
@@ -114,6 +177,7 @@ main {
         img {
           align-self: start;
           max-width: 50%;
+          border-radius: 2.5rem 0.75rem 0.75rem 2.5rem;
         }
         .content {
           padding: 1rem 0;
@@ -128,13 +192,22 @@ main {
           }
         }
       }
+      @include tablet {
+        .card {
+          flex-direction: column-reverse;
+          img {
+            max-width: 100%;
+            border-radius: 0.75rem;
+          }
+        }
+      }
     }
   }
   .gallery {
     .container {
       @include sectionSpace;
       .main-row {
-        & > img {
+        img {
           max-width: 50%;
           align-self: center;
         }
@@ -155,9 +228,28 @@ main {
         margin-top: 2rem;
         display: flex;
         justify-content: space-between;
-        & > img {
+        img {
           width: 32%;
           cursor: pointer;
+        }
+      }
+      @include tablet {
+        .main-row {
+          flex-direction: column-reverse;
+          img {
+            max-width: 100%;
+          }
+          .content {
+            margin: 0 0 1.5rem 0;
+          }
+        }
+        .second-row {
+          flex-direction: column-reverse;
+          row-gap: 1.5rem;
+          img {
+            width: auto;
+            max-width: 100%;
+          }
         }
       }
     }
@@ -211,6 +303,18 @@ main {
         background-color: $secondary_background_light;
         @include rounded;
       }
+      @include tablet {
+        flex-direction: column-reverse;
+        row-gap: 1.5rem;
+        & > img {
+          align-self: center;
+        }
+        .review {
+          .row {
+            display: block;
+          }
+        }
+      }
     }
   }
   .slider {
@@ -240,6 +344,16 @@ main {
           width: 350px;
           object-fit: cover;
           @include rounded;
+        }
+      }
+      @include tablet {
+        .row {
+          h2 {
+            @include H24;
+          }
+          .btns {
+            display: none;
+          }
         }
       }
       overflow-x: hidden;
@@ -284,6 +398,28 @@ main {
             @include button;
           }
           text-align: center;
+        }
+      }
+      @include tablet {
+        .card {
+          display: block;
+          img {
+            width: 100%;
+          }
+          .content {
+            padding: 1rem;
+            width: 80%;
+            margin: -100px auto 0 auto !important;
+            z-index: 1;
+            position: relative;
+            h2 {
+              @include H24;
+              line-height: 1.5rem;
+            }
+            p {
+              line-height: 1rem;
+            }
+          }
         }
       }
     }
@@ -387,6 +523,9 @@ main {
         column-gap: 3.125rem;
         margin: 0 auto;
         animation: gosSliderAnimation 60s linear infinite;
+        @include tablet {
+          animation-duration: 15s;
+        }
         .card {
           text-decoration: none;
           color: $text_light;
