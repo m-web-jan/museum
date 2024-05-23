@@ -209,6 +209,9 @@ main {
             max-width: 100%;
             border-radius: 0.75rem;
           }
+          .content {
+            margin: 0 2rem;
+          }
         }
       }
     }
@@ -363,6 +366,11 @@ main {
           }
           .btns {
             display: none;
+          }
+          .slider_images {
+            img {
+              width: 200px;
+            }
           }
         }
       }
