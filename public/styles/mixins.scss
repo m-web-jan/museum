@@ -1,4 +1,4 @@
-@import './colorsD.scss';
+@import './colors.scss';
 @import './breakpoints.scss';
 
 @mixin rounded {
@@ -11,7 +11,7 @@
   }
 }
 @mixin button {
-  background-color: $blue;
+  background-color: var(--blue);
   color: white;
   padding: 0.625rem 1.563rem;
   cursor: pointer;
@@ -21,11 +21,11 @@
   text-decoration: none;
   &:hover {
     transition: .3s;
-    background-color: $blue_hover;
+    background-color: var(--blue-hover);
   }
 }
 @mixin secondaryButton {
-  border: 2px solid $blue;
+  border: 2px solid var(--blue);
   color: #121212;
   padding: 0.625rem 1.563rem;
   cursor: pointer;
@@ -35,7 +35,7 @@
   text-decoration: none;
   &:hover {
     transition: .3s;
-    background-color: $blue;
+    background-color: var(--blue);
     color: white;
   }
 }
@@ -53,10 +53,10 @@
       display: flex;
       column-gap: 8px;
       h2 {
+        color: var(--text-light);
         font-size: 18px;
         font-weight: 600;
         align-self: center;
-        color: $text_dark;
       }
       img {
         width: 2.375rem;
@@ -75,7 +75,7 @@
         column-gap: 2rem;
         li a {
           @include H18;
-          color: $text_dark;
+          color: var(--text-light);
           text-decoration: none;
         }
       }
@@ -89,8 +89,8 @@
       margin-left: auto;
       .themeText {
         user-select: none;
-        color: $text_dark;
         cursor: pointer;
+        color: var(--text-light);
       }
       .change-theme {
         align-self: center;
@@ -140,10 +140,10 @@
         }
       }
       .change-lng {
-        background-color: $background_dark;
-        color: $text_dark;
         border: none;
         outline: none;
+        color: var(--text-light);
+        background-color: var(--background-light);
       }
       & * img {
         cursor: pointer;
@@ -155,7 +155,7 @@
         @include H18;
       }
       .tickets {
-        background-color: $blue;
+        background-color: var(--blue);
         padding: 7px;
         @include rounded;
         text-decoration: none;
@@ -201,7 +201,6 @@
       justify-content: space-between;
       .left {
         .logo {
-          color: $text_dark;
           display: flex;
           column-gap: 0.5rem;
           img {
@@ -210,6 +209,7 @@
           h2 {
             @include H18;
             align-self: center;
+            color: var(--text-light);
           }
         }
         p {
@@ -242,12 +242,12 @@
             @include H18;
             a {
               text-decoration: none;
-              color: $text_dark;
+              color: var(--text-light);
             }
           }
         }
         .workingHours {
-          color: $text_dark;
+          color: var(--text-light);
           @include laptop {
             display: none;
           }
@@ -267,7 +267,7 @@
     .line {
       width: 100%;
       height: 1px;
-      background-color: white;
+      background-color: #121212;
       margin: 1rem 0;
       @include laptop {
         display: none;
@@ -323,6 +323,18 @@
         border: none;
         outline: none;
         cursor: pointer;
+      }
+      .theme,
+      .lang {
+        display: flex;
+        column-gap: 5px;
+        h2 {
+          @include H18;
+          align-self: center;
+        }
+        img {
+          align-self: center;
+        }
       }
     }
   }

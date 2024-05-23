@@ -82,72 +82,47 @@ gallery();
 // Галерея
 
 // Переключатель тем
-document.body.onload = async () => {
-  const currentTheme = localStorage.getItem("theme");
-  const themeText = document.getElementsByClassName(
-    "themeText"
-  )[0] as HTMLElement;
-
-  const loadStyle = async (stylePath: string) => {
-    const oldLink = document.querySelector('#theme') as HTMLLinkElement;
-    if (oldLink) {
-      oldLink.parentNode?.removeChild(oldLink);
-    }
-
-    const newLink = document.createElement('link');
-    newLink.rel = 'stylesheet';
-    newLink.id = 'theme';
-    newLink.href = stylePath;
-    document.head.appendChild(newLink);
-  };
-
-  if (currentTheme === "dark") {
-    switchMode.checked = true;
-    await loadStyle('./styleD.scss');
-    changeLogo("logoWhite.png");
-    themeText.innerText = "Темная";
-  } else {
-    switchMode.checked = false;
-    await loadStyle('./styleL.scss');
-    changeLogo("logoBlack.png");
-    themeText.innerText = "Светлая";
-  }
-};
 
 let switchMode = document.getElementsByClassName(
   "change-theme__input"
 )[0] as HTMLInputElement;
 
-switchMode.onchange = async () => {
-  const themeText = document.getElementsByClassName(
-    "themeText"
-  )[0] as HTMLElement;
+switchMode.onchange = changeTheme;
 
-  const loadStyle = async (stylePath: string) => {
-    const oldLink = document.querySelector('#theme') as HTMLLinkElement;
-    if (oldLink) {
-      oldLink.parentNode?.removeChild(oldLink);
-    }
-
-    const newLink = document.createElement('link');
-    newLink.rel = 'stylesheet';
-    newLink.id = 'theme';
-    newLink.href = stylePath;
-    document.head.appendChild(newLink);
-  };
-
-  if (switchMode.checked) {
-    localStorage.setItem("theme", "dark");
-    await loadStyle('./styleD.scss');
-    changeLogo("logoWhite.png");
-    themeText.innerText = "Темная";
-  } else {
-    localStorage.setItem("theme", "light");
-    await loadStyle('./styleL.scss');
-    changeLogo("logoBlack.png");
-    themeText.innerText = "Светлая";
+document.body.onload = () => {
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === 'dark') {
+    switchMode.checked = true;
+    changeTheme();
   }
-};
+  if (currentTheme === 'light') {
+    switchMode.checked = false;
+    changeTheme();
+  }
+}
+
+
+function changeTheme() {
+  const root = document.documentElement;
+  const themeText = document.getElementsByClassName('themeText')[0] as HTMLElement;
+  if (switchMode.checked) {
+    themeText.innerText = 'Темная';
+    root.style.setProperty('--background-light', '#121212');
+    root.style.setProperty('--secondary-background-light', '#202328');
+    root.style.setProperty('--text-light', '#ffffff');
+    root.style.setProperty('--text-light2', '#121212');
+    changeLogo("logoWhite.png");
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeText.innerText = 'Светлая';
+    root.style.setProperty('--background-light', '#ffffff');
+    root.style.setProperty('--secondary-background-light', '#E3E3E3');
+    root.style.setProperty('--text-light', '#121212');
+    root.style.setProperty('--text-light2', '#ffffff');
+    changeLogo("logoBlack.png");
+    localStorage.setItem("theme", "light");
+  }
+}
 
 function changeLogo(newPath: string) {
   const logos = document.getElementsByClassName("logoImg");
@@ -156,6 +131,69 @@ function changeLogo(newPath: string) {
     logoImg.src = `images/${newPath}`;
   }
 }
+
+// switchMode.onchange = async () => {
+//   const themeText = document.getElementsByClassName(
+//     "themeText"
+//   )[0] as HTMLElement;
+
+//   const loadStyle = async (stylePath: string) => {
+//     const oldLink = document.querySelector('#theme') as HTMLLinkElement;
+//     if (oldLink) {
+//       oldLink.parentNode?.removeChild(oldLink);
+//     }
+
+//     const newLink = document.createElement('link');
+//     newLink.rel = 'stylesheet';
+//     newLink.id = 'theme';
+//     newLink.href = stylePath;
+//     document.head.appendChild(newLink);
+//   };
+
+//   if (switchMode.checked) {
+//     localStorage.setItem("theme", "dark");
+//     await loadStyle('./styleD.scss');
+//     changeLogo("logoWhite.png");
+//     themeText.innerText = "Темная";
+//   } else {
+//     localStorage.setItem("theme", "light");
+//     await loadStyle('./styleL.scss');
+//     changeLogo("logoBlack.png");
+//     themeText.innerText = "Светлая";
+//   }
+// };
+
+// document.body.onload = async () => {
+//   const currentTheme = localStorage.getItem("theme");
+//   const themeText = document.getElementsByClassName(
+//     "themeText"
+//   )[0] as HTMLElement;
+
+//   const loadStyle = async (stylePath: string) => {
+//     const oldLink = document.querySelector('#theme') as HTMLLinkElement;
+//     if (oldLink) {
+//       oldLink.parentNode?.removeChild(oldLink);
+//     }
+
+//     const newLink = document.createElement('link');
+//     newLink.rel = 'stylesheet';
+//     newLink.id = 'theme';
+//     newLink.href = stylePath;
+//     document.head.appendChild(newLink);
+//   };
+
+//   if (currentTheme === "dark") {
+//     switchMode.checked = true;
+//     await loadStyle('./styleD.scss');
+//     changeLogo("logoWhite.png");
+//     themeText.innerText = "Темная";
+//   } else {
+//     switchMode.checked = false;
+//     await loadStyle('./styleL.scss');
+//     changeLogo("logoBlack.png");
+//     themeText.innerText = "Светлая";
+//   }
+// };
 // Переключатель тем
 
 // Переключатель языков

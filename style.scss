@@ -1,23 +1,21 @@
-@import "./public/styles/colorsD.scss";
+@import "./public/styles/colors.scss";
 @import "./public/styles/fonts.scss";
 @import "./public/styles/grid.scss";
-@import "./public/styles/mixinsD.scss";
+@import "./public/styles/mixins.scss";
 @import "./public/styles/common.scss";
 
 header {
   @include header;
 }
-
 ::-webkit-scrollbar-thumb {
-  background-color: $secondary_background_dark;
+  background-color: var(--secondary-background-light);
 }
 body {
-  background-color: $background_dark;
   transition: .5s;
+  background-color: var(--background-light);
 }
-
 main {
-  color: $text_dark;
+  color: var(--text-light);
   .main-banner {
     .container {
       padding-top: 1.5rem;
@@ -30,7 +28,7 @@ main {
     justify-content: center;
     .banner {
       position: relative;
-      background: url(./images/mainBanner.png) no-repeat;
+      background: url(../images/mainBanner.png) no-repeat;
       @include rounded;
       width: 80%;
       margin-left: 150px;
@@ -42,7 +40,7 @@ main {
     h2 {
       @include H48;
       width: 30rem;
-      background-color: $secondary_background_dark;
+      background-color: var(--secondary-background-light);
       @include rounded;
       padding: 2.5rem 1.75rem;
       position: absolute;
@@ -52,7 +50,7 @@ main {
     @include tablet {
       h2 {
         @include H24;
-        color: $text_dark2;
+        color: var(--text-light2);
         background-color: #00000000;
         z-index: 10;
         padding: 0;
@@ -66,13 +64,13 @@ main {
         top: 60%;
         transform: translateY(-50%);
         text-transform: uppercase;
-        color: $text_dark2;
+        color: var(--text-light2);
         margin-top: 0.5rem;
         @include H12;
         font-weight: 300;
       }
       .banner {
-        background: url(./images/mainMobBanner.png) no-repeat;
+        background: url(../images/mainMobBanner.png) no-repeat;
         background-size: cover;
         border-radius: 0;
         width: 100%;
@@ -185,7 +183,7 @@ main {
         @include rounded;
         display: flex;
         justify-content: space-between;
-        background-color: $secondary_background_dark;
+        background-color: var(--secondary-background-light);
         img {
           align-self: start;
           max-width: 50%;
@@ -274,7 +272,7 @@ main {
       .review {
         @include rounded;
         padding: 2rem;
-        background-color: $secondary_background_dark;
+        background-color: var(--secondary-background-light);
         .row {
           display: flex;
           justify-content: space-between;
@@ -312,7 +310,7 @@ main {
       }
       & > img {
         padding: 4.5rem 6rem;
-        background-color: $secondary_background_dark;
+        background-color: var(--secondary-background-light);
         @include rounded;
       }
       @include tablet {
@@ -393,7 +391,7 @@ main {
           }
         }
         .content {
-          background-color: $secondary_background_dark;
+          background-color: var(--secondary-background-light);
           @include rounded;
           padding: 2.5rem;
           margin: 3rem 0 3rem -8rem;
@@ -445,16 +443,16 @@ main {
       flex-wrap: wrap;
       .poster {
         position: relative;
-        background-color: $secondary_background_dark;
+        background-color: var(--secondary-background-light);
         @include rounded;
         max-width: 27rem;
         img {
           width: 100%;
         }
         .date {
+          color: var(--text-light2);
           text-align: center;
           background-color: white;
-          color: $text_dark2;
           padding: 0.5rem 0.313rem;
           @include rounded;
           @include H16;
@@ -469,7 +467,7 @@ main {
           }
           .btn {
             @include secondaryButton;
-            color: $text_dark;
+            color: var(--text-light);
           }
         }
       }
@@ -485,7 +483,7 @@ main {
       .line {
         width: 100%;
         height: 1px;
-        background-color: white;
+        background-color: var(--text-light);
         margin: 2rem 0;
       }
       .question {
@@ -523,7 +521,7 @@ main {
   }
   .gosSlider {
     @include sectionSpace;
-    background-color: $secondary_background_dark;
+    background-color: var(--secondary-background-light);
     .container {
       padding: 1rem 0;
       overflow: hidden;
@@ -542,7 +540,7 @@ main {
         }
         .card {
           text-decoration: none;
-          color: $text_dark;
+          color: var(--text-light);
           display: flex;
           column-gap: 1.25rem;
           img {
