@@ -107,7 +107,7 @@ let switchMode = document.getElementsByClassName(
 )[0] as HTMLInputElement;
 
 switchMode.onchange = () => {
-  const theme = document.getElementById("theme") as HTMLLinkElement;
+  const theme = document.getElementsByClassName("themeLink")[0] as HTMLLinkElement;
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
