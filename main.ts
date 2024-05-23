@@ -84,7 +84,6 @@ gallery();
 // Переключатель тем
 document.body.onload = async () => {
   const currentTheme = localStorage.getItem("theme");
-  const themeLink = document.getElementById("theme") as HTMLLinkElement;
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
