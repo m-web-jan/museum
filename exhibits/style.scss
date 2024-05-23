@@ -18,7 +18,7 @@ main {
       }
       h1 {
         @include H48;
-        color: $text_light2;
+        color: var(--text-light2);
         text-align: center;
         position: absolute;
         top: 50%;
@@ -43,7 +43,7 @@ main {
           }
         }
         max-width: 19.375rem;
-        background-color: $secondary_background_light;
+        background-color: var(--secondary-background-light);
         border-radius: 0.625rem;
         .img {
           position: relative;
@@ -60,7 +60,7 @@ main {
             background-color: rgba(0, 0, 0, 0.4);
             width: 100%;
             @include H20;
-            color: $text_light2;
+            color: var(--text-light2);
           }
         }
         .content {
@@ -94,7 +94,7 @@ footer {
   .modalBody {
     text-align: center;
     position: absolute;
-    background-color: $secondary_background_light;
+    background-color: var(--secondary-background-light);
     max-width: 50rem;
     border-radius: 0.625rem;
     top: 50%;
@@ -126,7 +126,7 @@ footer {
           li {
             @include H16;
             &::marker {
-              color: $blue;
+              color: var(--blue);
             }
             span {
               @include H16Light;
