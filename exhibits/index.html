@@ -4,37 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../images/whiteLogo.png" />
-    <title>Экспонаты</title>
+    <title class="lang" key="exhibits">Экспонаты</title>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="logo">
-          <img src="../images/logoBlack.png" alt="logo" />
-          <h2>Берестье</h2>
+          <img class="logoImg" src="../images/logoBlack.png" alt="logo" />
+          <h2 class="lang" key="logo">Берестье</h2>
         </div>
         <nav>
           <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="#">Экспонаты</a></li>
-            <li><a href="../contacts/index.html">Контакты</a></li>
+            <li><a class="lang" key="home" href="../index.html">Главная</a></li>
+            <li><a class="lang" key="exhibits" href="">Экспонаты</a></li>
+            <li><a class="lang" key="contacts" href="../contacts/index.html">Контакты</a></li>
           </ul>
         </nav>
         <div class="header_btns">
-          <div class="change-theme">
-            Светлая
-            <img src="../images/toggleOn.png" alt="toggleOn" />
-          </div>
+          <label class="switch" for="headerTheme">
+            <p class="themeText">Светлая</p>
+            <label class="change-theme">
+              <input
+                type="checkbox"
+                class="change-theme__input"
+                id="headerTheme"
+              />
+              <span class="change-theme__slider"></span>
+            </label>
+          </label>
           <select name="" id="" class="change-lng">
-            <option value="rus">Русский</option>
-            <option value="eng">Белорусский</option>
+            <option value="ru">Русский</option>
+            <option value="by">Белорусский</option>
           </select>
           <a href="#" class="tickets">
             <img src="../images/ticket.png" alt="ticket" />
-            Билеты
+            <span class="lang" key="tickets">Билеты</span>
           </a>
         </div>
-        <img class="burgerMenu" src="../images/burgerMenu.png" alt="burgerMenuIcon">
+        <img
+          class="burgerMenu"
+          src="../images/burgerMenu.png"
+          alt="burgerMenuIcon"
+        />
       </div>
     </header>
 
@@ -46,7 +57,7 @@
             alt=""
             class="bannerImg"
           />
-          <h1>Галерея Музейных Экспонатов</h1>
+          <h1 class="lang" key="exhibitsTitle">Галерея Музейных Экспонатов</h1>
         </div>
       </section>
       <section class="cards">
@@ -59,10 +70,10 @@
         <div class="row">
           <div class="left">
             <div class="logo">
-              <img src="../images/logoBlack.png" alt="logoImg" />
-              <h2>Берестье</h2>
+              <img class="logoImg" src="images/logoBlack.png" alt="logoImg" />
+              <h2 class="lang" key="logo">Берестье</h2>
             </div>
-            <p>
+            <p class="lang" key="footerText">
               Археологический музей «Берестье» – единственный в мире музей
               средневекового восточнославянского города, расположенный на месте
               детинца древнего Берестья.
@@ -71,47 +82,57 @@
           <div class="right">
             <nav>
               <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="">Экспонаты</a></li>
-                <li><a href="../contacts/index.html">Контакты</a></li>
-                <li><a href="#">Билеты</a></li>
+                <li><a href="../index.html" class="lang" key="home">Главная</a></li>
+                <li>
+                  <a href="" class="lang" key="exhibits"
+                    >Экспонаты</a
+                  >
+                </li>
+                <li>
+                  <a href="../contacts/index.html" class="lang" key="contacts"
+                    >Контакты</a
+                  >
+                </li>
+                <li><a href="#" class="lang" key="tickets">Билеты</a></li>
               </ul>
             </nav>
             <div class="workingHours">
-              <h2>Время работы</h2>
-              <p>Пн - Вс: 10:00 - 18:00</p>
-              <p>+375 162 53 10 11</p>
-              <p>brest_museum@brest.by</p>
-              <p>224018, г. Брест, проезд Крепостной, 15</p>
+              <h2 class="lang" key="hoursTitle">Время работы</h2>
+              <p class="lang" key="hours1">Пн - Вс: 10:00 - 18:00</p>
+              <p class="lang" key="hours2">+375 162 53 10 11</p>
+              <p class="lang" key="hours3">brest_museum@brest.by</p>
+              <p class="lang" key="hours4">
+                224018, г. Брест, проезд Крепостной, 15
+              </p>
             </div>
           </div>
         </div>
         <div class="line"></div>
-        <div class="row">
+        <div class="row row2">
           <div class="docs">
-            <p>© БЕРЕСТЬЕ 1982 - 2023</p>
+            <p class="lang" key="years">© БЕРЕСТЬЕ 1982 - 2023</p>
             <div class="pipe"></div>
-            <a href="#">Пользовательское соглашение</a>
+            <a href="#" class="lang" key="docs1">Пользовательское соглашение</a>
             <div class="pipe"></div>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="#" class="lang" key="docs2">Политика конфиденциальности</a>
           </div>
           <div class="btns">
             <div class="social">
-              <a href=""><img src="../images/vk.png" alt="vk" /></a>
-              <a href=""><img src="../images/facebook.png" alt="facebook" /></a>
-              <a href=""><img src="../images/telegram.png" alt="telegram" /></a>
-              <a href=""
+              <a href="" target="_blank"
+                ><img src="../images/vk.png" alt="vk"
+              /></a>
+              <a href="" target="_blank"
+                ><img src="../images/facebook.png" alt="facebook"
+              /></a>
+              <a href="" target="_blank"
+                ><img src="../images/telegram.png" alt="telegram"
+              /></a>
+              <a
+                href="https://www.instagram.com/museum_berestye/"
+                target="_blank"
                 ><img src="../images/instagram.png" alt="instagram"
               /></a>
             </div>
-            <div class="theme">
-              <h2>Светлая</h2>
-              <img src="../images/toggleOn.png" alt="toggleIcon" />
-            </div>
-            <select name="" id="" class="lang">
-              <option value="rus">Русский</option>
-              <option value="eng">Белорусский</option>
-            </select>
           </div>
         </div>
       </div>

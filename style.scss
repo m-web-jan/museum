@@ -11,7 +11,7 @@ header {
   background-color: var(--secondary-background-light);
 }
 body {
-  transition: .5s;
+  transition: 0.5s;
   background-color: var(--background-light);
 }
 main {
@@ -50,7 +50,7 @@ main {
     @include tablet {
       h2 {
         @include H24;
-        color: var(--text-light2);
+        color: #ffffff;
         background-color: #00000000;
         z-index: 10;
         padding: 0;
@@ -59,17 +59,18 @@ main {
         line-height: 2rem;
         max-width: 18rem;
       }
-      p {
-        position: absolute;
-        top: 60%;
-        transform: translateY(-50%);
-        text-transform: uppercase;
-        color: var(--text-light2);
-        margin-top: 0.5rem;
-        @include H12;
-        font-weight: 300;
-      }
       .banner {
+        p {
+          display: block;
+          position: absolute;
+          top: 60%;
+          transform: translateY(-50%);
+          text-transform: uppercase;
+          color: #ffffff;
+          margin-top: 0.5rem;
+          @include H12;
+          font-weight: 300;
+        }
         background: url(../images/mainMobBanner.png) no-repeat;
         background-size: cover;
         border-radius: 0;
@@ -367,10 +368,12 @@ main {
           .btns {
             display: none;
           }
-          .slider_images {
-            img {
-              width: 100px;
-            }
+        }
+        .slider_images {
+          height: auto;
+          img {
+            width: 250px;
+            height: 235px;
           }
         }
       }
@@ -458,7 +461,7 @@ main {
           width: 100%;
         }
         .date {
-          color: var(--text-light2);
+          color: #121212;
           text-align: center;
           background-color: white;
           padding: 0.5rem 0.313rem;
