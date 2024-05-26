@@ -2,6 +2,7 @@ import { arrLang } from './langData.ts';
 
 // Слайдер
 function animateSlider() {
+  const sliderContainer = document.getElementsByClassName('slider')[0] as HTMLElement;
   const slider = document.querySelector("#sliderCards") as HTMLElement;
   const nextButton = document.querySelector("#sliderBtnRight") as HTMLElement;
   const prevButton = document.querySelector("#sliderBtnLeft") as HTMLElement;
@@ -25,23 +26,23 @@ function animateSlider() {
   let isSwiping = false;
   let cardMobWidth = 290;
 
-  slider.addEventListener("touchstart", (event) => {
+  sliderContainer.addEventListener("touchstart", (event) => {
     startX = event.touches[0].clientX;
     isSwiping = true;
   });
 
-  slider.addEventListener("touchmove", () => {
+  sliderContainer.addEventListener("touchmove", () => {
     if (!isSwiping) return;
   });
 
-  slider.addEventListener("touchend", (event) => {
+  sliderContainer.addEventListener("touchend", (event) => {
     if (!isSwiping) return;
     const endX = event.changedTouches[0].clientX;
     const diffX = startX - endX;
 
     if (diffX > 10) {
       // Swipe left
-      if (currentTranslateX > -(cardsCount - 3) * cardMobWidth) {
+      if (currentTranslateX > -(cardsCount - 1) * cardMobWidth) {
         currentTranslateX -= cardMobWidth;
       }
     } else if (diffX < -50) {
