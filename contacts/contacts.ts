@@ -81,12 +81,28 @@ function changeLogo(newPath: string) {
 // Переключение зяыка
 const lngSelect = document.querySelector(".change-lng") as HTMLSelectElement;
 lngSelect.addEventListener("change", changeLang);
-
+document.body.onload = () => {
+  const currentLang = localStorage.getItem("lang");
+  if (currentLang === null) return;
+  const langBtn = document.getElementsByTagName('select')[0];
+  if (currentLang === 'ru') {
+    langBtn.value = currentLang;
+  }
+  if (currentLang === 'by') {
+    langBtn.value = currentLang;
+  }
+  const allTags = document.getElementsByClassName("lang");
+  for (let i = 0; i < allTags.length; i++) {
+    const tag = allTags[i] as HTMLElement;
+    const key = tag.getAttribute("key") as string;
+    tag.innerText = arrLang[currentLang][key];
+  }
+}
 function changeLang(e: Event) {
   const target = e.target as HTMLSelectElement;
   const lang = target.value as "ru";
   const allTags = document.getElementsByClassName("lang");
-
+  localStorage.setItem("lang", lang);
   for (let i = 0; i < allTags.length; i++) {
     const tag = allTags[i] as HTMLElement;
     const key = tag.getAttribute("key") as string;
