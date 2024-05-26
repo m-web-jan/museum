@@ -181,9 +181,18 @@ footer {
       width: 90%;
       .modalContent {
         flex-direction: column;
+        .modalText {
+          h2 {
+            @include H24;
+          }
+          p {
+            @include H12;
+            font-weight: normal;
+          }
+        }
         img {
-          width: 100%;
-          margin: 0;
+          width: 65%;
+          margin: 1rem auto 0 auto;
         }
         .modalText {
           width: auto;
