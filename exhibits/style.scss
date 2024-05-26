@@ -60,10 +60,12 @@ main {
       gap: 3rem;
       .card {
         cursor: pointer;
-        &:hover {
-          .img {
-            background-size: 100%;
-            transition: .7s;
+        @include touch {
+          &:hover {
+            .img {
+              background-size: 100%;
+              transition: 0.7s;
+            }
           }
         }
         max-width: 19.375rem;
@@ -74,7 +76,7 @@ main {
           height: 19.375rem;
           background: url(../images/ex1.png) center;
           background-size: 110%;
-          transition: .7s;
+          transition: 0.7s;
           border-radius: 0.625rem;
           overflow: hidden;
           p {
@@ -185,7 +187,8 @@ footer {
         }
         .modalText {
           width: auto;
-          p, ul {
+          p,
+          ul {
             margin: 1.5rem;
           }
         }

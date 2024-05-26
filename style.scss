@@ -538,9 +538,11 @@ main {
       overflow: hidden;
       max-width: 74rem;
       .cards {
-        &:hover {
-          animation-play-state: paused;
-          cursor: pointer;
+        @include touch {
+          &:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+          }
         }
         display: flex;
         column-gap: 3.125rem;

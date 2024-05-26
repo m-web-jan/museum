@@ -1,3 +1,8 @@
+@mixin touch {
+  @media (hover: hover) {
+    @content;
+  }
+}
 @mixin laptop {
   @media (max-width: 1366px) {
     @content;
