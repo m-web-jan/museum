@@ -40,10 +40,15 @@ function animateSlider() {
     if (!isSwiping) return;
     const diffX = startX - currentX;
     if (diffX > 50) {
-      currentTranslateX -=
-        -cardsCount + 1 !== currentTranslateX / cardMobWidth ? cardMobWidth : 0;
+      // Swipe left
+      if (currentTranslateX > -(cardsCount - 1) * cardMobWidth) {
+        currentTranslateX -= cardMobWidth;
+      }
     } else if (diffX < -50) {
-      currentTranslateX += currentTranslateX === 0 ? 0 : cardMobWidth;
+      // Swipe right
+      if (currentTranslateX < 0) {
+        currentTranslateX += cardMobWidth;
+      }
     }
     slider.style.transform = `translateX(${currentTranslateX}px)`;
     isSwiping = false;
