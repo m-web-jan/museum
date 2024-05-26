@@ -30,7 +30,7 @@ function animateSlider() {
     isSwiping = true;
   });
 
-  slider.addEventListener("touchmove", (event) => {
+  slider.addEventListener("touchmove", () => {
     if (!isSwiping) return;
   });
 
