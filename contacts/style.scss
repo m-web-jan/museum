@@ -107,6 +107,9 @@ main {
           width: 100%;
           border-radius: 0.625rem;
           height: 450px;
+          * {
+            border-radius: 10px
+          }
         }
       }
       @include tablet {
