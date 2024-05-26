@@ -110,23 +110,19 @@ footer {
 }
 
 .modal {
-  @include tablet {
-    overflow: auto;
-  }
   display: none;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
+  @include tablet {
+    overflow: auto;
+    height: calc(100vh - 100px);
+    padding-top: 100px;
+  }
   .modalBody {
-    @include tablet {
-      margin: 100px 0;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-    }
     text-align: center;
     position: absolute;
     background-color: var(--secondary-background-light);
@@ -135,6 +131,12 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include tablet {
+      margin: 0;
+      left: 50%;
+      top: 50px;
+      transform: translateX(-50%);
+    }
     .modalContent {
       display: flex;
       img {
