@@ -41,12 +41,10 @@ function animateSlider() {
     const diffX = startX - endX;
 
     if (diffX > 10) {
-      // Swipe left
       if (currentTranslateX > -(cardsCount - 1) * cardMobWidth) {
         currentTranslateX -= cardMobWidth;
       }
-    } else if (diffX < -50) {
-      // Swipe right
+    } else if (diffX < -10) {
       if (currentTranslateX < 0) {
         currentTranslateX += cardMobWidth;
       }
