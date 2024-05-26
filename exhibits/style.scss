@@ -177,6 +177,10 @@ footer {
         }
       }
     }
+    .modalBtn {
+      @include button;
+      margin: 3rem 0 1.5rem 0;
+    }
     @include tablet {
       width: 90%;
       .modalContent {
@@ -202,10 +206,9 @@ footer {
           }
         }
       }
-    }
-    .modalBtn {
-      @include button;
-      margin: 3rem 0 1.5rem 0;
+      .modalBtn {
+        margin: 0 0 1.5rem 0;
+      }
     }
   }
 }
