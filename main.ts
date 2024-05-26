@@ -30,7 +30,7 @@ function animateSlider() {
     isSwiping = true;
   });
 
-  slider.addEventListener("touchmove", () => {
+  slider.addEventListener("touchmove", (event) => {
     if (!isSwiping) return;
   });
 
@@ -41,7 +41,7 @@ function animateSlider() {
 
     if (diffX > 50) {
       // Swipe left
-      if (currentTranslateX > -(cardsCount - 1) * cardMobWidth) {
+      if (currentTranslateX > -(cardsCount - 3) * cardMobWidth) {
         currentTranslateX -= cardMobWidth;
       }
     } else if (diffX < -50) {
