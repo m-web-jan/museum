@@ -1,5 +1,5 @@
-@import './colors.scss';
-@import './breakpoints.scss';
+@import "./colors.scss";
+@import "./breakpoints.scss";
 
 @mixin rounded {
   border-radius: 0.625rem;
@@ -16,11 +16,11 @@
   padding: 0.625rem 1.563rem;
   cursor: pointer;
   @include rounded;
-  transition: .3s;
+  transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   &:hover {
-    transition: .3s;
+    transition: 0.3s;
     background-color: var(--blue-hover);
   }
 }
@@ -30,11 +30,11 @@
   padding: 0.625rem 1.563rem;
   cursor: pointer;
   @include rounded;
-  transition: .3s;
+  transition: 0.3s;
   display: inline-block;
   text-decoration: none;
   &:hover {
-    transition: .3s;
+    transition: 0.3s;
     background-color: var(--blue);
     color: white;
   }
@@ -48,6 +48,8 @@
     padding-bottom: 30px;
     @include laptop {
       justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 1rem;
     }
     .logo {
       display: flex;
@@ -63,7 +65,7 @@
         align-self: center;
       }
     }
-    nav {
+    & > nav {
       @include laptop {
         display: none;
       }
@@ -81,12 +83,16 @@
       }
     }
     .header_btns {
+      margin-left: auto;
       @include laptop {
-        display: none;
+        margin-right: 1rem;
+        margin-left: 0;
+        .tickets {
+          display: none;
+        }
       }
       display: flex;
       column-gap: 1.5rem;
-      margin-left: auto;
       .themeText {
         user-select: none;
         cursor: pointer;
@@ -112,7 +118,7 @@
           right: 0;
           border-radius: 50px;
           background-color: #121212;
-          transition: .4s;
+          transition: 0.4s;
         }
         .change-theme__slider::before {
           content: "";
@@ -124,7 +130,7 @@
           width: 10px;
           border-radius: 34px;
           background-color: white;
-          transition: .4s;
+          transition: 0.4s;
         }
         .change-theme__input:focus + .change-theme__slider {
           box-shadow: 0 0 1px white;
@@ -166,12 +172,95 @@
       }
     }
     .burgerMenu {
+      align-self: center;
       cursor: pointer;
       width: 1.5rem;
       height: 1.25rem;
       display: none;
       @include laptop {
         display: block;
+      }
+    }
+
+    .mobMenu {
+      opacity: 1;
+      transition: .3s;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      .menuContent {
+        transition: .3s;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: var(--background-light);
+        height: 100vh;
+        width: 20rem;
+        .menuTop {
+          display: flex;
+          justify-content: space-between;
+          .logo {
+            margin: 2rem 1rem;
+            display: flex;
+            h2 {
+              @include H18;
+              align-self: center;
+            }
+          }
+          & > img {
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            align-self: center;
+            margin-right: 1rem;
+          }
+        }
+        .links {
+          margin-top: 3.5rem;
+          ul {
+            list-style: none;
+          }
+          li {
+            padding: 1rem;
+            border-bottom: 1px solid var(--text-light);
+            a {
+              text-decoration: none;
+              color: var(--text-light);
+              @include H32;
+              font-weight: normal;
+            }
+          }
+        }
+        .ticketBtn {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 4rem;
+          .tickets {
+            display: flex;
+            column-gap: 5px;
+            justify-content: center;
+            max-width: 6rem;
+            background-color: var(--blue);
+            padding: 7px;
+            @include rounded;
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+    .close {
+      opacity: 0;
+      z-index: -1;
+      transition: .3s;
+      .menuContent {
+        transition: .3s;
+        right: -20rem;
       }
     }
   }
@@ -280,7 +369,7 @@
         flex-direction: column-reverse;
         row-gap: 0.5rem;
         p {
-          border-bottom: 1px solid #2F353D;
+          border-bottom: 1px solid #2f353d;
           font-size: 0.75rem;
           padding-bottom: 5px;
           width: 100%;

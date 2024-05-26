@@ -10,7 +10,7 @@
     <header>
       <div class="container">
         <div class="logo">
-          <img src="../images/logoBlack.png" alt="logo" />
+          <img class="logoImg" src="../images/logoBlack.png" alt="logo" />
           <h2>Берестье</h2>
         </div>
         <nav>
@@ -21,20 +21,31 @@
           </ul>
         </nav>
         <div class="header_btns">
-          <div class="change-theme">
-            Светлая
-            <img src="../images/toggleOn.png" alt="toggleOn" />
-          </div>
+          <label class="switch" for="headerTheme">
+            <p class="themeText">Светлая</p>
+            <label class="change-theme">
+              <input
+                type="checkbox"
+                class="change-theme__input"
+                id="headerTheme"
+              />
+              <span class="change-theme__slider"></span>
+            </label>
+          </label>
           <select name="" id="" class="change-lng">
-            <option value="rus">Русский</option>
-            <option value="eng">Белорусский</option>
+            <option value="ru">Русский</option>
+            <option value="by">Беларускі</option>
           </select>
           <a href="#" class="tickets">
             <img src="../images/ticket.png" alt="ticket" />
             Билеты
           </a>
         </div>
-        <img class="burgerMenu" src="../images/burgerMenu.png" alt="burgerMenuIcon">
+        <img
+          class="burgerMenu"
+          src="../images/burgerMenu.png"
+          alt="burgerMenuIcon"
+        />
       </div>
     </header>
 
@@ -43,12 +54,22 @@
         <div class="container">
           <div class="banner">
             <div class="column">
-              <h2>Свяжитесь с нами — будем рады!</h2>
-              <img src="../images/contactsLightBanner1.png" alt="bannerImage" />
+              <h2 class="lang" key="contactUs">
+                Свяжитесь с нами — будем рады!
+              </h2>
+              <img
+                class="bannerImg"
+                src="../images/contactsLightBanner1.png"
+                alt="bannerImage"
+              />
             </div>
             <div class="column">
-              <img src="../images/contactsLightBanner2.png" alt="bannerImage" />
-              <p>
+              <img
+                class="bannerImg"
+                src="../images/contactsLightBanner2.png"
+                alt="bannerImage"
+              />
+              <p class="lang" key="contactUsText">
                 Погрузитесь в мир знаний и открытий вместе с нами! Добро
                 пожаловать в музей 'Берестье', где культура и познание
                 переплетаются в увлекательном танце!
@@ -59,10 +80,12 @@
       </section>
       <section class="contactInfo">
         <div class="container">
-          <h2>Археологический музей «Берестье»</h2>
+          <h2 class="lang" key="contactUsTitle">
+            Археологический музей «Берестье»
+          </h2>
           <div class="info">
             <div class="content">
-              <p>
+              <p class="lang" key="contactUsInfo">
                 Наш адерс: г. Брест, проезд Крепостной, 15<br />
                 Режим работы:<br />
                 Сентябрь-Апрель: с 10.00 до 18.00 (касса до 17.30)Май-Август: с
@@ -71,19 +94,19 @@
                 Телефон: +375 162 53 10 11
               </p>
               <a href="#" class="btn">
-                <img src="../public/images/ticket.png" alt="ticketIcon">
-                <span>
-                  Билеты
-                </span>
+                <img src="../public/images/ticket.png" alt="ticketIcon" />
+                <span class="lang" key="tickets"> Билеты </span>
               </a>
-              <div class="social">
-                <a href="#"><img src="../images/vk.png" alt="vkIcon"></a>
-                <a href="#"><img src="../images/facebook.png" alt="facebookIcon"></a>
-                <a href="#"><img src="../images/telegram.png" alt="telegramIcon"></a>
-                <a href="#"><img src="../images/instagram.png" alt="instagramIcon"></a>
-              </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.9953525339474!2d23.652135712180037!3d52.07981446860928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47210ba32d3305b1%3A0x1b4da7b3633ff332!2z0JDRgNGF0LXQvtC70L7Qs9C40YfQtdGB0LrQuNC5INC80YPQt9C10Lkg0JHQtdGA0LXRgdGC0YzQtQ!5e0!3m2!1sru!2sby!4v1715512803832!5m2!1sru!2sby" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.9953525339474!2d23.652135712180037!3d52.07981446860928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47210ba32d3305b1%3A0x1b4da7b3633ff332!2z0JDRgNGF0LXQvtC70L7Qs9C40YfQtdGB0LrQuNC5INC80YPQt9C10Lkg0JHQtdGA0LXRgdGC0YzQtQ!5e0!3m2!1sru!2sby!4v1715512803832!5m2!1sru!2sby"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -94,10 +117,10 @@
         <div class="row">
           <div class="left">
             <div class="logo">
-              <img src="../images/logoBlack.png" alt="logoImg" />
-              <h2>Берестье</h2>
+              <img class="logoImg" src="images/logoBlack.png" alt="logoImg" />
+              <h2 class="lang" key="logo">Берестье</h2>
             </div>
-            <p>
+            <p class="lang" key="footerText">
               Археологический музей «Берестье» – единственный в мире музей
               средневекового восточнославянского города, расположенный на месте
               детинца древнего Берестья.
@@ -106,29 +129,39 @@
           <div class="right">
             <nav>
               <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="../exhibits/index.html">Экспонаты</a></li>
-                <li><a href="">Контакты</a></li>
-                <li><a href="#">Билеты</a></li>
+                <li><a href="../index.html" class="lang" key="home">Главная</a></li>
+                <li>
+                  <a href="../exhibits/index.html" class="lang" key="exhibits"
+                    >Экспонаты</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="lang" key="contacts"
+                    >Контакты</a
+                  >
+                </li>
+                <li><a href="" class="lang" key="tickets">Билеты</a></li>
               </ul>
             </nav>
             <div class="workingHours">
-              <h2>Время работы</h2>
-              <p>Пн - Вс: 10:00 - 18:00</p>
-              <p>+375 162 53 10 11</p>
-              <p>brest_museum@brest.by</p>
-              <p>224018, г. Брест, проезд Крепостной, 15</p>
+              <h2 class="lang" key="hoursTitle">Время работы</h2>
+              <p class="lang" key="hours1">Пн - Вс: 10:00 - 18:00</p>
+              <p class="lang" key="hours2">+375 162 53 10 11</p>
+              <p class="lang" key="hours3">brest_museum@brest.by</p>
+              <p class="lang" key="hours4">
+                224018, г. Брест, проезд Крепостной, 15
+              </p>
             </div>
           </div>
         </div>
         <div class="line"></div>
-        <div class="row">
+        <div class="row row2">
           <div class="docs">
-            <p>© БЕРЕСТЬЕ 1982 - 2023</p>
+            <p class="lang" key="years">© БЕРЕСТЬЕ 1982 - 2023</p>
             <div class="pipe"></div>
-            <a href="#">Пользовательское соглашение</a>
+            <a href="#" class="lang" key="docs1">Пользовательское соглашение</a>
             <div class="pipe"></div>
-            <a href="#">Политика конфиденциальности</a>
+            <a href="#" class="lang" key="docs2">Политика конфиденциальности</a>
           </div>
           <div class="btns">
             <div class="social">
@@ -139,14 +172,6 @@
                 ><img src="../images/instagram.png" alt="instagram"
               /></a>
             </div>
-            <div class="theme">
-              <h2>Светлая</h2>
-              <img src="../images/toggleOn.png" alt="toggleIcon" />
-            </div>
-            <select name="" id="" class="lang">
-              <option value="rus">Русский</option>
-              <option value="eng">Белорусский</option>
-            </select>
           </div>
         </div>
       </div>

@@ -4,6 +4,14 @@
 @import "../public/styles/mixins.scss";
 @import "./public/styles/common.scss";
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-background-light);
+}
+body {
+  transition: 0.5s;
+  background-color: var(--background-light);
+}
+
 header {
   @include header;
 }
@@ -19,11 +27,13 @@ main {
         display: flex;
         justify-content: space-between;
         h2 {
+          color: var(--text-light);
           @include H48Light;
           max-width: 36rem;
           margin-bottom: 1.25rem;
         }
         p {
+          color: var(--text-light);
           padding: 1.5rem 1rem;
           @include H32Light;
         }
@@ -35,11 +45,13 @@ main {
     .container {
       h2 {
         @include H96Light;
+        color: var(--text-light);
       }
       .info {
         margin-top: 3rem;
         display: flex;
         column-gap: 2rem;
+        color: var(--text-light);
         .content {
           max-width: 30rem;
           p {
@@ -53,13 +65,6 @@ main {
               align-self: center;
               vertical-align: text-top;
               margin-left: 5px;
-            }
-          }
-          .social {
-            display: flex;
-            column-gap: 1.5rem;
-            img {
-              width: 3rem;
             }
           }
         }

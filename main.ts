@@ -105,6 +105,7 @@ document.body.onload = () => {
 
 
 function changeTheme() {
+  const icons = document.getElementsByClassName('icon') as unknown as HTMLElement[];
   const socialIcons = document.getElementsByClassName('social')[0] as HTMLElement;
   const root = document.documentElement;
   const themeText = document.getElementsByClassName('themeText')[0] as HTMLElement;
@@ -117,6 +118,9 @@ function changeTheme() {
     changeLogo("logoWhite.png");
     localStorage.setItem("theme", "dark");
     socialIcons.style.filter = "invert(1)"
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].style.filter = 'invert(1)';
+    }
   } else {
     themeText.innerText = 'Светлая';
     root.style.setProperty('--background-light', '#ffffff');
@@ -126,6 +130,9 @@ function changeTheme() {
     changeLogo("logoBlack.png");
     localStorage.setItem("theme", "light");
     socialIcons.style.filter = "invert(0)"
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].style.filter = 'invert(0)';
+    }
   }
 }
 
@@ -155,3 +162,27 @@ function changeLang(e: Event) {
   }
 }
 // Переключатель языков
+
+// Открытие моб меню
+const burger = document.getElementsByClassName('burgerMenu')[0] as HTMLElement;
+burger.onclick = showMobMenu;
+
+const mobMenu = document.getElementsByClassName('mobMenu')[0] as HTMLElement;
+
+function showMobMenu() {
+  if (mobMenu.classList.contains('close')) {
+    mobMenu.classList.remove('close');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobMenu.classList.add('close');
+    document.body.style.overflow = 'visible';
+  }
+}
+
+mobMenu.addEventListener('click', (e) => {
+  const elem = e.target as HTMLElement;
+  if (!elem.classList.contains('menuContent')) {
+    showMobMenu();
+  }
+});
+// Открытие моб меню

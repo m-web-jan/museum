@@ -61,7 +61,7 @@ function cropText(text: string) {
   }</p>`;
 }
 
-function feFillCards() {
+function reFillCards() {
   cards.innerHTML = "";
   for (let i = 0; i < data.length; i++) {
     fillCard(data[i]);
@@ -120,6 +120,7 @@ document.body.onload = () => {
 
 function changeTheme() {
   const root = document.documentElement;
+  const icons = document.getElementsByClassName('icon') as unknown as HTMLElement[];
   const themeText = document.getElementsByClassName(
     "themeText"
   )[0] as HTMLElement;
@@ -139,6 +140,9 @@ function changeTheme() {
     localStorage.setItem("theme", "dark");
     socialIcons.style.filter = "invert(1)";
     bannerImg.src = "../images/exhibitsDarkBanner.png";
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].style.filter = 'invert(1)';
+    }
   } else {
     themeText.innerText = "Светлая";
     root.style.setProperty("--background-light", "#ffffff");
@@ -149,6 +153,9 @@ function changeTheme() {
     localStorage.setItem("theme", "light");
     socialIcons.style.filter = "invert(0)";
     bannerImg.src = "../images/exhibitsLightBanner.png";
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].style.filter = 'invert(0)';
+    }
   }
 }
 
@@ -170,7 +177,7 @@ function changeLang(e: Event) {
   const target = e.target as HTMLSelectElement;
   const lang = target.value as "ru";
   language = lang;
-  feFillCards();
+  reFillCards();
   const allTags = document.getElementsByClassName("lang");
 
   for (let i = 0; i < allTags.length; i++) {
@@ -180,3 +187,27 @@ function changeLang(e: Event) {
   }
 }
 // Переключение зяыка
+
+// Открытие моб меню
+const burger = document.getElementsByClassName('burgerMenu')[0] as HTMLElement;
+burger.onclick = showMobMenu;
+
+const mobMenu = document.getElementsByClassName('mobMenu')[0] as HTMLElement;
+
+function showMobMenu() {
+  if (mobMenu.classList.contains('close')) {
+    mobMenu.classList.remove('close');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobMenu.classList.add('close');
+    document.body.style.overflow = 'visible';
+  }
+}
+
+mobMenu.addEventListener('click', (e) => {
+  const elem = e.target as HTMLElement;
+  if (!elem.classList.contains('menuContent')) {
+    showMobMenu();
+  }
+});
+// Открытие моб меню
