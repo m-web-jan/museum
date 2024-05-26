@@ -119,10 +119,13 @@ footer {
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   .modalBody {
     @include tablet {
       margin: 100px 0;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
     }
     text-align: center;
     position: absolute;
@@ -171,7 +174,7 @@ footer {
       }
     }
     @include tablet {
-      width: auto;
+      width: 90%;
       .modalContent {
         flex-direction: column;
         img {
