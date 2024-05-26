@@ -94,3 +94,27 @@ function changeLang(e: Event) {
   }
 }
 // Переключение зяыка
+
+// Открытие моб меню
+const burger = document.getElementsByClassName('burgerMenu')[0] as HTMLElement;
+burger.onclick = showMobMenu;
+
+const mobMenu = document.getElementsByClassName('mobMenu')[0] as HTMLElement;
+
+function showMobMenu() {
+  if (mobMenu.classList.contains('close')) {
+    mobMenu.classList.remove('close');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobMenu.classList.add('close');
+    document.body.style.overflow = 'visible';
+  }
+}
+
+mobMenu.addEventListener('click', (e) => {
+  const elem = e.target as HTMLElement;
+  if (!elem.classList.contains('menuContent')) {
+    showMobMenu();
+  }
+});
+// Открытие моб меню

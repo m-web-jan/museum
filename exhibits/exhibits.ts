@@ -90,13 +90,13 @@ function openModal(cardData: ICard) {
       closeModal();
   };
 }
-// Открытие модального окна
-
-export function closeModal() {
+function closeModal() {
   document.body.style.overflowY = "visible";
   const modal = document.getElementsByClassName("modal")[0] as HTMLElement;
   modal.style.display = "none";
 }
+// Открытие модального окна
+
 
 // Переключение тем
 
