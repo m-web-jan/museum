@@ -39,7 +39,7 @@ function animateSlider() {
     const endX = event.changedTouches[0].clientX;
     const diffX = startX - endX;
 
-    if (diffX > 50) {
+    if (diffX > 10) {
       // Swipe left
       if (currentTranslateX > -(cardsCount - 3) * cardMobWidth) {
         currentTranslateX -= cardMobWidth;
