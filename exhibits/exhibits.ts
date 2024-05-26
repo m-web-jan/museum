@@ -106,18 +106,6 @@ let switchMode = document.getElementsByClassName(
 
 switchMode.onchange = changeTheme;
 
-document.body.onload = () => {
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme === "dark") {
-    switchMode.checked = true;
-    changeTheme();
-  }
-  if (currentTheme === "light") {
-    switchMode.checked = false;
-    changeTheme();
-  }
-};
-
 function changeTheme() {
   const root = document.documentElement;
   const icons = document.getElementsByClassName('icon') as unknown as HTMLElement[];
@@ -173,6 +161,15 @@ function changeLogo(newPath: string) {
 const lngSelect = document.querySelector(".change-lng") as HTMLSelectElement;
 lngSelect.addEventListener("change", changeLang);
 document.body.onload = () => {
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === "dark") {
+    switchMode.checked = true;
+    changeTheme();
+  }
+  if (currentTheme === "light") {
+    switchMode.checked = false;
+    changeTheme();
+  }
   const currentLang = localStorage.getItem("lang");
   if (currentLang === null) return;
   const langBtn = document.getElementsByTagName('select')[0];

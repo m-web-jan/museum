@@ -17,12 +17,40 @@ function animateSlider() {
 
   nextButton.addEventListener("click", () => {
     currentTranslateX -=
-      -cardsCount + 3 !== currentTranslateX / cardWidth ? cardWidth : 0;
+      -cardsCount + 1 !== currentTranslateX / cardWidth ? cardWidth : 0;
     slider.style.transform = `translateX(${currentTranslateX}px)`;
+  });
+
+  let startX = 0;
+  let currentX = 0;
+  let isSwiping = false;
+  let cardMobWidth = 290;
+
+  slider.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+    isSwiping = true;
+  });
+
+  slider.addEventListener("touchmove", (event) => {
+    if (!isSwiping) return;
+    currentX = event.touches[0].clientX;
+  });
+
+  slider.addEventListener("touchend", () => {
+    if (!isSwiping) return;
+    const diffX = startX - currentX;
+    if (diffX > 50) {
+      currentTranslateX -=
+        -cardsCount + 1 !== currentTranslateX / cardMobWidth ? cardMobWidth : 0;
+    } else if (diffX < -50) {
+      currentTranslateX += currentTranslateX === 0 ? 0 : cardMobWidth;
+    }
+    slider.style.transform = `translateX(${currentTranslateX}px)`;
+    isSwiping = false;
   });
 }
 
-animateSlider();
+document.addEventListener("DOMContentLoaded", animateSlider);
 // Слайдер
 
 const galleryData = [
@@ -91,19 +119,6 @@ let switchMode = document.getElementsByClassName(
 
 switchMode.onchange = changeTheme;
 
-document.body.onload = () => {
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme === 'dark') {
-    switchMode.checked = true;
-    changeTheme();
-  }
-  if (currentTheme === 'light') {
-    switchMode.checked = false;
-    changeTheme();
-  }
-}
-
-
 function changeTheme() {
   const icons = document.getElementsByClassName('icon') as unknown as HTMLElement[];
   const socialIcons = document.getElementsByClassName('social')[0] as HTMLElement;
@@ -151,6 +166,15 @@ const lngSelect = document.querySelector(".change-lng") as HTMLSelectElement;
 lngSelect.addEventListener("change", changeLang);
 
 document.body.onload = () => {
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === 'dark') {
+    switchMode.checked = true;
+    changeTheme();
+  }
+  if (currentTheme === 'light') {
+    switchMode.checked = false;
+    changeTheme();
+  }
   const currentLang = localStorage.getItem("lang");
   if (currentLang === null) return;
   const langBtn = document.getElementsByTagName('select')[0];
