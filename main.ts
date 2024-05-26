@@ -22,7 +22,6 @@ function animateSlider() {
   });
 
   let startX = 0;
-  let currentX = 0;
   let isSwiping = false;
   let cardMobWidth = 290;
 
@@ -31,14 +30,15 @@ function animateSlider() {
     isSwiping = true;
   });
 
-  slider.addEventListener("touchmove", (event) => {
+  slider.addEventListener("touchmove", () => {
     if (!isSwiping) return;
-    currentX = event.touches[0].clientX;
   });
 
-  slider.addEventListener("touchend", () => {
+  slider.addEventListener("touchend", (event) => {
     if (!isSwiping) return;
-    const diffX = startX - currentX;
+    const endX = event.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
     if (diffX > 50) {
       // Swipe left
       if (currentTranslateX > -(cardsCount - 1) * cardMobWidth) {
