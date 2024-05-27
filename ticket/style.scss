@@ -41,7 +41,8 @@ main {
           gap: 1rem;
           flex-wrap: wrap;
           @include mobile {
-            flex-direction: column
+            flex-direction: column;
+            gap: 0;
           }
           label {
             @include rounded;

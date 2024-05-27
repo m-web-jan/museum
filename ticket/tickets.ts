@@ -1,4 +1,5 @@
 import "./style.scss";
+import { arrLang } from "../langData";
 
 document.body.onload = () => {
   const cardForm = document.getElementById("cardForm") as HTMLFormElement;
@@ -147,7 +148,38 @@ document.body.onload = () => {
     switchMode.checked = false;
     changeTheme();
   }
+  const currentLang = localStorage.getItem("lang");
+  if (currentLang === null) return;
+  const langBtn = document.getElementsByTagName('select')[0];
+  if (currentLang === 'ru') {
+    langBtn.value = currentLang;
+  }
+  if (currentLang === 'by') {
+    langBtn.value = currentLang;
+  }
+  const allTags = document.getElementsByClassName("lang");
+  for (let i = 0; i < allTags.length; i++) {
+    const tag = allTags[i] as HTMLElement;
+    const key = tag.getAttribute("key") as string;
+    tag.innerText = arrLang[currentLang][key];
+  }
 };
+// Переключение зяыка
+const lngSelect = document.querySelector(".change-lng") as HTMLSelectElement;
+lngSelect.addEventListener("change", changeLang);
+let lang = 'ru';
+function changeLang(e: Event) {
+  const target = e.target as HTMLSelectElement;
+  lang = target.value as "ru";
+  const allTags = document.getElementsByClassName("lang");
+  localStorage.setItem("lang", lang);
+  for (let i = 0; i < allTags.length; i++) {
+    const tag = allTags[i] as HTMLElement;
+    const key = tag.getAttribute("key") as string;
+    tag.innerText = arrLang[lang][key];
+  }
+}
+// Переключение зяыка
 
 // Переключатель тем
 let switchMode = document.getElementsByClassName(
@@ -239,7 +271,31 @@ function changeAddPrice(e: Event) {
 
 const price = document.getElementsByClassName("totalPrice")[0];
 function changeTotalPrice() {
-  price.innerHTML = `Итого: <span>${ticketPrice + addPrice} р.</span>`;
+  price.innerHTML = `${lang === "ru" ? '<span>Итого: </span>' : '<span>Усяго: </span>'}<span>${ticketPrice + addPrice} р.</span>`;
 }
 
 // Подсчет стоимости
+
+// Открытие моб меню
+const burger = document.getElementsByClassName('burgerMenu')[0] as HTMLElement;
+burger.onclick = showMobMenu;
+
+const mobMenu = document.getElementsByClassName('mobMenu')[0] as HTMLElement;
+
+function showMobMenu() {
+  if (mobMenu.classList.contains('close')) {
+    mobMenu.classList.remove('close');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobMenu.classList.add('close');
+    document.body.style.overflow = 'visible';
+  }
+}
+
+mobMenu.addEventListener('click', (e) => {
+  const elem = e.target as HTMLElement;
+  if (!elem.classList.contains('menuContent')) {
+    showMobMenu();
+  }
+});
+// Открытие моб меню

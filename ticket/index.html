@@ -21,7 +21,7 @@
                 >Экспонаты</a
               >
             </li>
-            <li><a class="lang" key="contacts" href="#">Контакты</a></li>
+            <li><a class="lang" key="contacts" href="../contacts/index.html">Контакты</a></li>
           </ul>
         </nav>
         <div class="mobMenu close">
@@ -47,11 +47,11 @@
                     >Экспонаты</a
                   >
                 </li>
-                <li><a class="lang" key="contacts" href="">Контакты</a></li>
+                <li><a class="lang" key="contacts" href="../contacts/index.html">Контакты</a></li>
               </ul>
             </nav>
             <div class="ticketBtn">
-              <a href="#" class="tickets">
+              <a href="" class="tickets">
                 <img src="../images/ticket.png" alt="ticket" />
                 <span class="lang" key="tickets">Билеты</span>
               </a>
@@ -74,7 +74,7 @@
             <option value="ru">Русский</option>
             <option value="by">Беларускі</option>
           </select>
-          <a href="#" class="tickets">
+          <a href="" class="tickets">
             <img src="../images/ticket.png" alt="ticket" />
             <span class="lang" key="tickets">Билеты</span>
           </a>
@@ -92,42 +92,42 @@
         <div class="mainContent">
           <img src="../images/ticketsBanner.png" alt="ticketsBanner" />
           <form action="#" id="cardForm">
-            <h2>Тип билета</h2>
+            <h2 class="lang" key="ticketType">Тип билета</h2>
             <div class="ticketType">
               <input key="7.50" name="type" type="radio" id="adult" required />
               <label for="adult" title="*От 18 лет">
-                <span>Взрослый<br />7.50</span>
+                <span class="lang" key="adult">Взрослый<br />7.50</span>
               </label>
               <input key="5.70" name="type" type="radio" id="student" />
               <label
                 for="student"
                 title="*При предоставление студенческого билета"
               >
-                <span>Студент<br />5.70</span>
+                <span class="lang" key="student">Студент<br />5.70</span>
               </label>
               <input key="3.70" name="type" type="radio" id="schoolboy" />
               <label for="schoolboy" title="*1 - 11 класс">
-                <span>Школьник<br />3.70</span>
+                <span class="lang" key="schoolboy">Школьник<br />3.70</span>
               </label>
               <input key="0" name="type" type="radio" id="preschooler" />
               <label for="preschooler" title="*<1 класса">
-                <span>Дошкольник<br />Бесплатно</span>
+                <span class="lang" key="preschooler">Дошкольник<br />Бесплатно</span>
               </label>
             </div>
-            <h2>Дополнительные услуги</h2>
+            <h2 class="lang" key="addService">Дополнительные услуги</h2>
             <div class="additional">
               <div class="row">
-                <label for="add1">Тематическая экскурсия - 24 р.</label>
+                <label for="add1" class="lang" key="add1">Тематическая экскурсия - 24 р.</label>
                 <input key="24" type="checkbox" id="add1" />
               </div>
               <div class="row">
-                <label for="add2"
+                <label for="add2" class="lang" key="add2"
                   >Обзорная экскурсия (1-3 классы) - 14 р.</label
                 >
                 <input key="14" type="checkbox" id="add2" />
               </div>
               <div class="row">
-                <label for="add3"
+                <label for="add3" class="lang" key="add3"
                   >Демонстрация программы 3D панорамы Древнего Берестья XIII
                   века - 5 р.</label
                 >
@@ -136,7 +136,7 @@
             </div>
 
             <div class="cardDetails">
-              <h2>Детали карты</h2>
+              <h2 class="lang" key="cardDetails">Детали карты</h2>
               <div class="payment-form">
                 <div class="form">
                   <div class="form-group">
@@ -194,8 +194,8 @@
               </div>
             </div>
             <div class="row">
-              <h2 class="totalPrice">Итого: <span>0 р.</span></h2>
-              <button type="submit">Оплатить</button>
+              <h2 class="totalPrice"><span class="lang" key="priceTotla">Итого: </span><span>0 р.</span></h2>
+              <button type="submit" class="lang" key="pay">Оплатить</button>
             </div>
           </form>
         </div>
@@ -203,7 +203,7 @@
           <div class="card">
             <img src="../images/ticketsAside1.png" alt="poster1" />
             <div class="content">
-              <h2>
+              <h2 class="lang" key="add1Title">
                 3D-очки демонстрируют программы виртуальной реальности, панорамы
                 древнего Берестья
               </h2>
@@ -213,7 +213,7 @@
           <div class="card">
             <img src="../images/ticketsAside2.png" alt="poster1" />
             <div class="content">
-              <h2>
+              <h2 class="lang" key="add2Title">
                 Тематическая и обзорная экскурсии по археологическому музею
               </h2>
               <p>24 р.</p>
@@ -222,7 +222,7 @@
           <div class="card">
             <img src="../images/ticketsAside3.png" alt="poster1" />
             <div class="content">
-              <h2>Тематическая экскурсия по прилегающей территории</h2>
+              <h2 class="lang" key="add3Title">Тематическая экскурсия по прилегающей территории</h2>
               <p>14 р.</p>
             </div>
           </div>
@@ -260,7 +260,7 @@
                   >
                 </li>
                 <li>
-                  <a href="" class="lang" key="contacts">Контакты</a>
+                  <a href="../contacts/index.html" class="lang" key="contacts">Контакты</a>
                 </li>
                 <li><a href="" class="lang" key="tickets">Билеты</a></li>
               </ul>
