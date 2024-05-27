@@ -236,16 +236,11 @@
           }
         }
         .ticketBtn {
-          // position: absolute;
-          // left: 50%;
-          // transform: translateX(-50%);
-          // bottom: 6rem;
           margin: 5rem 2rem;
           .tickets {
             display: flex;
             column-gap: 5px;
             justify-content: center;
-            // max-width: 6rem;
             background-color: var(--blue);
             padding: 7px;
             @include rounded;
@@ -320,14 +315,11 @@
         }
         column-gap: 3.5rem;
         nav {
-          @include laptop {
-            padding: 1rem 0;
-          }
           ul {
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            // flex-direction: column;
+            flex-direction: column;
             gap: 0.75rem;
           }
           li {
@@ -335,6 +327,12 @@
             a {
               text-decoration: none;
               color: var(--text-light);
+            }
+          }
+          @include laptop {
+            padding: 1rem 0;
+            ul {
+              flex-direction: row;
             }
           }
         }

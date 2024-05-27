@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="lang" key="contacts">Билеты</title>
+    <link rel="icon" type="image/png" href="../images/whiteLogo.png" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img class="logoImg" src="../images/logoBlack.png" alt="logo" />
+          <h2 class="lang" key="logo">Берестье</h2>
+        </div>
+        <nav>
+          <ul>
+            <li><a class="lang" key="home" href="../index.html">Главная</a></li>
+            <li>
+              <a class="lang" key="exhibits" href="../exhibits/index.html"
+                >Экспонаты</a
+              >
+            </li>
+            <li><a class="lang" key="contacts" href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="mobMenu close">
+          <div class="menuContent">
+            <div class="menuTop">
+              <div class="logo">
+                <img class="logoImg" src="../images/logoBlack.png" alt="logo" />
+                <h2 class="lang" key="logo">Берестье</h2>
+              </div>
+              <img
+                src="../images/closeIcon.png"
+                alt="closeIcon"
+                class="closeBtn icon"
+              />
+            </div>
+            <nav class="links">
+              <ul>
+                <li>
+                  <a class="lang" key="home" href="../index.html">Главная</a>
+                </li>
+                <li>
+                  <a class="lang" key="exhibits" href="../exhibits/index.html"
+                    >Экспонаты</a
+                  >
+                </li>
+                <li><a class="lang" key="contacts" href="">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="ticketBtn">
+              <a href="#" class="tickets">
+                <img src="../images/ticket.png" alt="ticket" />
+                <span class="lang" key="tickets">Билеты</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header_btns">
+          <label class="switch" for="headerTheme">
+            <p class="themeText">Светлая</p>
+            <label class="change-theme">
+              <input
+                type="checkbox"
+                class="change-theme__input"
+                id="headerTheme"
+              />
+              <span class="change-theme__slider"></span>
+            </label>
+          </label>
+          <select name="" id="" class="change-lng">
+            <option value="ru">Русский</option>
+            <option value="by">Беларускі</option>
+          </select>
+          <a href="#" class="tickets">
+            <img src="../images/ticket.png" alt="ticket" />
+            <span class="lang" key="tickets">Билеты</span>
+          </a>
+        </div>
+        <img
+          class="burgerMenu icon"
+          src="../images/burgerMenu.png"
+          alt="burgerMenuIcon"
+        />
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="mainContent">
+          <img src="../images/ticketsBanner.png" alt="ticketsBanner" />
+          <form action="#" id="cardForm">
+            <h2>Тип билета</h2>
+            <div class="ticketType">
+              <input key="7.50" name="type" type="radio" id="adult" required />
+              <label for="adult" title="*От 18 лет">
+                <span>Взрослый<br />7.50</span>
+              </label>
+              <input key="5.70" name="type" type="radio" id="student" />
+              <label
+                for="student"
+                title="*При предоставление студенческого билета"
+              >
+                <span>Студент<br />5.70</span>
+              </label>
+              <input key="3.70" name="type" type="radio" id="schoolboy" />
+              <label for="schoolboy" title="*1 - 11 класс">
+                <span>Школьник<br />3.70</span>
+              </label>
+              <input key="0" name="type" type="radio" id="preschooler" />
+              <label for="preschooler" title="*<1 класса">
+                <span>Дошкольник<br />Бесплатно</span>
+              </label>
+            </div>
+            <h2>Дополнительные услуги</h2>
+            <div class="additional">
+              <div class="row">
+                <label for="add1">Тематическая экскурсия - 24 р.</label>
+                <input key="24" type="checkbox" id="add1" />
+              </div>
+              <div class="row">
+                <label for="add2"
+                  >Обзорная экскурсия (1-3 классы) - 14 р.</label
+                >
+                <input key="14" type="checkbox" id="add2" />
+              </div>
+              <div class="row">
+                <label for="add3"
+                  >Демонстрация программы 3D панорамы Древнего Берестья XIII
+                  века - 5 р.</label
+                >
+                <input key="5" type="checkbox" id="add3" />
+              </div>
+            </div>
+
+            <div class="cardDetails">
+              <h2>Детали карты</h2>
+              <div class="payment-form">
+                <div class="form">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="cardHolder"
+                      name="cardHolder"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="cardNumber"
+                      name="cardNumber"
+                      placeholder="1234 5678 9012 3456"
+                      required
+                      maxlength="19"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="cardExpiry"
+                      name="cardExpiry"
+                      placeholder="MM/YY"
+                      required
+                      maxlength="5"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      id="cardCVV"
+                      name="cardCVV"
+                      placeholder="CVV"
+                      required
+                      maxlength="3"
+                    />
+                  </div>
+                </div>
+                <div class="card-preview">
+                  <div class="card">
+                    <img class="card-logo" id="cardLogo" />
+                    <div class="card-holder" id="cardHolderDisplay">
+                      FULL NAME
+                    </div>
+                    <div class="card-expiry" id="cardExpiryDisplay">MM/YY</div>
+                    <div class="card-number" id="cardNumberDisplay">
+                      #### #### #### ####
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <h2 class="totalPrice">Итого: <span>0 р.</span></h2>
+              <button type="submit">Оплатить</button>
+            </div>
+          </form>
+        </div>
+        <aside>
+          <div class="card">
+            <img src="../images/ticketsAside1.png" alt="poster1" />
+            <div class="content">
+              <h2>
+                3D-очки демонстрируют программы виртуальной реальности, панорамы
+                древнего Берестья
+              </h2>
+              <p>5 р.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/ticketsAside2.png" alt="poster1" />
+            <div class="content">
+              <h2>
+                Тематическая и обзорная экскурсии по археологическому музею
+              </h2>
+              <p>24 р.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../images/ticketsAside3.png" alt="poster1" />
+            <div class="content">
+              <h2>Тематическая экскурсия по прилегающей территории</h2>
+              <p>14 р.</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="left">
+            <div class="logo">
+              <img
+                class="logoImg"
+                src="../images/logoBlack.png"
+                alt="logoImg"
+              />
+              <h2 class="lang" key="logo">Берестье</h2>
+            </div>
+            <p class="lang" key="footerText">
+              Археологический музей «Берестье» – единственный в мире музей
+              средневекового восточнославянского города, расположенный на месте
+              детинца древнего Берестья.
+            </p>
+          </div>
+          <div class="right">
+            <nav>
+              <ul>
+                <li>
+                  <a href="../index.html" class="lang" key="home">Главная</a>
+                </li>
+                <li>
+                  <a href="../exhibits/index.html" class="lang" key="exhibits"
+                    >Экспонаты</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="lang" key="contacts">Контакты</a>
+                </li>
+                <li><a href="" class="lang" key="tickets">Билеты</a></li>
+              </ul>
+            </nav>
+            <div class="workingHours">
+              <h2 class="lang" key="hoursTitle">Время работы</h2>
+              <p class="lang" key="hours1">Пн - Вс: 10:00 - 18:00</p>
+              <p class="lang" key="hours2">+375 162 53 10 11</p>
+              <p class="lang" key="hours3">brest_museum@brest.by</p>
+              <p class="lang" key="hours4">
+                224018, г. Брест, проезд Крепостной, 15
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="row row2">
+          <div class="docs">
+            <p class="lang" key="years">© БЕРЕСТЬЕ 1982 - 2023</p>
+            <div class="pipe"></div>
+            <a href="#" class="lang" key="docs1">Пользовательское соглашение</a>
+            <div class="pipe"></div>
+            <a href="#" class="lang" key="docs2">Политика конфиденциальности</a>
+          </div>
+          <div class="btns">
+            <div class="social">
+              <a href=""><img src="../images/vk.png" alt="vk" /></a>
+              <a href=""><img src="../images/facebook.png" alt="facebook" /></a>
+              <a href=""><img src="../images/telegram.png" alt="telegram" /></a>
+              <a href=""
+                ><img src="../images/instagram.png" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./tickets.ts"></script>
+  </body>
+</html>

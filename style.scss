@@ -519,7 +519,7 @@ main {
         display: none;
       }
       input[type="radio"]:checked + label + .answer {
-        max-height: 50px;
+        max-height: 100px;
         transition: max-height 0.8s ease;
       }
       input[type="radio"]:checked + label {

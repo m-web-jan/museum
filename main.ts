@@ -116,7 +116,6 @@ gallery();
 // Галерея
 
 // Переключатель тем
-
 let switchMode = document.getElementsByClassName(
   "change-theme__input"
 )[0] as HTMLInputElement;
@@ -162,7 +161,6 @@ function changeLogo(newPath: string) {
     logoImg.src = `images/${newPath}`;
   }
 }
-
 // Переключатель тем
 
 // Переключатель языков
