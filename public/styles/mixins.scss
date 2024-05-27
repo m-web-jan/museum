@@ -192,6 +192,7 @@
       height: 120vh;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 100;
+      backdrop-filter: blur(4px);
       .menuContent {
         transition: .3s;
         position: absolute;
@@ -232,6 +233,7 @@
               color: var(--text-light);
               @include H32;
               font-weight: normal;
+              display: block;
             }
           }
         }

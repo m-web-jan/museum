@@ -1,0 +1,40 @@
+@import "./public/styles/fonts.scss";
+@import "./public/styles/colors.scss";
+@import "./public/styles/grid.scss";
+@import "../public/styles/mixins.scss";
+@import "./public/styles/common.scss";
+
+header {
+  @include header;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-background-light);
+}
+body {
+  transition: 0.5s;
+  background-color: var(--background-light);
+}
+
+main {
+  .docs {
+    .container {
+      @include sectionSpace;
+      max-width: 55rem;
+      color: var(--text-light);
+      h2 {
+        @include H32;
+        text-align: center;
+      }
+      p {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+footer {
+  @include sectionSpace;
+  @include footer;
+}
+

@@ -1,18 +1,24 @@
 import "./style.scss";
 import { arrLang } from "../langData";
 
+let cardHolderInput: HTMLInputElement, cardNumberInput: HTMLInputElement, cardExpiryInput: HTMLInputElement, cardCVVInput: HTMLInputElement;
+
 document.body.onload = () => {
   const cardForm = document.getElementById("cardForm") as HTMLFormElement;
-  const cardHolderInput = document.getElementById(
+  cardHolderInput = document.getElementById(
     "cardHolder"
   ) as HTMLInputElement;
-  const cardNumberInput = document.getElementById(
+  cardNumberInput = document.getElementById(
     "cardNumber"
   ) as HTMLInputElement;
-  const cardExpiryInput = document.getElementById(
+  cardExpiryInput = document.getElementById(
     "cardExpiry"
   ) as HTMLInputElement;
-  const cardCVVInput = document.getElementById("cardCVV") as HTMLInputElement;
+  cardCVVInput = document.getElementById("cardCVV") as HTMLInputElement;
+  cardHolderInput.disabled = true;
+  cardNumberInput.disabled = true;
+  cardExpiryInput.disabled = true;
+  cardCVVInput.disabled = true;
 
   const cardHolderDisplay = document.getElementById(
     "cardHolderDisplay"
@@ -127,15 +133,15 @@ document.body.onload = () => {
     const cardCVVValid = /^\d{3}$/.test(cardCVVInput.value);
 
     if (!cardHolderValid) {
-      alert("Invalid card holder name");
+      alert("Неверное имя владельца карты");
     } else if (!cardNumberValid) {
-      alert("Invalid card number");
+      alert("Не верный номер карты");
     } else if (!cardExpiryValid) {
-      alert("Invalid expiration date");
+      alert("Неверный срок действия");
     } else if (!cardCVVValid) {
-      alert("Invalid CVV");
+      alert("Неверный CVV");
     } else {
-      alert("Payment successful");
+      alert("Оплата сейчас доступна только в тестовом режиме, поэтому провести реальную транзакцию пока невозможно.");
     }
   });
 
@@ -271,7 +277,20 @@ function changeAddPrice(e: Event) {
 
 const price = document.getElementsByClassName("totalPrice")[0];
 function changeTotalPrice() {
-  price.innerHTML = `${lang === "ru" ? '<span>Итого: </span>' : '<span>Усяго: </span>'}<span>${ticketPrice + addPrice} р.</span>`;
+  let total = ticketPrice + addPrice;
+  if (total !== 0) {
+    cardHolderInput.disabled = false;
+    cardNumberInput.disabled = false;
+    cardExpiryInput.disabled = false;
+    cardCVVInput.disabled = false;
+    price.innerHTML = `${lang === "ru" ? '<span>Итого: </span>' : '<span>Усяго: </span>'}<span>${total} р.</span>`;
+  } else {
+    cardHolderInput.disabled = true;
+    cardNumberInput.disabled = true;
+    cardExpiryInput.disabled = true;
+    cardCVVInput.disabled = true;
+    price.innerHTML = `${lang === "ru" ? '<span>Итого: </span>' : '<span>Усяго: </span>'}<span>${total} р.</span>`;
+  }
 }
 
 // Подсчет стоимости

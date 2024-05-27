@@ -312,10 +312,12 @@ main {
           margin-top: 1rem;
         }
       }
-      & > img {
-        padding: 4.5rem 6rem;
+      .feedbackTitle {
         background-color: var(--secondary-background-light);
+        text-align: center;
+        @include H24;
         @include rounded;
+        padding: 2rem 6rem;
       }
       @include tablet {
         flex-direction: column-reverse;
@@ -578,12 +580,15 @@ main {
 }
 
 @keyframes gosSliderAnimation {
-  0% {
+  from {
     transform: translate(-100%);
   }
-  100% {
-    transform: translate(0);
-  }
+  // 0% {
+  //   transform: translate(-100%);
+  // }
+  // 100% {
+  //   transform: translate(0);
+  // }
 }
 
 footer {
