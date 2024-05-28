@@ -231,3 +231,13 @@ mobMenu.addEventListener('click', (e) => {
   }
 });
 // Открытие моб меню
+
+const scrollSlider = document.getElementsByClassName('gosSlider')[0].getElementsByClassName('container')[0];
+
+if (window.innerWidth < 768) {
+  setInterval(function() {
+    scrollSlider.scrollTo(0, 0);
+  }, 1000 * 15);
+}
+
+
