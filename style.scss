@@ -62,7 +62,7 @@ main {
     }
     @include tablet {
       h2 {
-        @include H24;
+        @include H32;
         color: #ffffff;
         background-color: #00000000;
         z-index: 10;
