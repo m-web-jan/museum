@@ -271,12 +271,13 @@ main {
           }
         }
         .second-row {
-          flex-direction: column-reverse;
-          row-gap: 1.5rem;
-          img {
-            width: auto;
-            max-width: 100%;
-          }
+          display: none;
+          // flex-direction: column-reverse;
+          // row-gap: 1.5rem;
+          // img {
+          //   width: auto;
+          //   max-width: 100%;
+          // }
         }
       }
     }
@@ -550,7 +551,6 @@ main {
     background-color: var(--secondary-background-light);
     .container {
       padding: 1rem 0;
-      // overflow: hidden;
       overflow: auto;
       max-width: 74rem;
       .cards {
