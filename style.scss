@@ -272,12 +272,6 @@ main {
         }
         .second-row {
           display: none;
-          // flex-direction: column-reverse;
-          // row-gap: 1.5rem;
-          // img {
-          //   width: auto;
-          //   max-width: 100%;
-          // }
         }
       }
     }
@@ -331,7 +325,13 @@ main {
         text-align: center;
         @include H24;
         @include rounded;
-        padding: 2rem 6rem;
+        padding: 2rem 3rem;
+        display: flex;
+        p {
+          margin: 0 auto;
+          width: 15rem;
+          align-self: center;
+        }
       }
       @include tablet {
         flex-direction: column-reverse;
