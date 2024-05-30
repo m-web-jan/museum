@@ -7,7 +7,7 @@
 @mixin sectionSpace {
   margin-top: 7.5rem;
   @include mobile {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 }
 @mixin button {
