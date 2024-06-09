@@ -9,6 +9,7 @@ export default defineConfig ({
         exhibits: resolve(__dirname, "exhibits/index.html"),
         contacts: resolve(__dirname, "contacts/index.html"),
         tickets: resolve(__dirname, "ticket/index.html"),
+        docs: resolve(__dirname, "docs/index.html"),
       },
     },
   },
