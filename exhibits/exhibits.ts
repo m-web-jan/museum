@@ -19,7 +19,6 @@ getCards();
 interface ICard {
   title: string[];
   description: string[];
-  century: string[];
   image: string;
   properties: string[][];
 }
@@ -43,7 +42,7 @@ function fillCard(cardData: ICard) {
     cardData.description[language === "ru" ? 0 : 1]
   );
   const cardCentury = document.createElement("h2");
-  cardCentury.innerText = cardData.century[language === "ru" ? 0 : 1];
+  cardCentury.innerText = cardData.properties[0][language === "ru" ? 0 : 1];
 
   cardImg.appendChild(cardTitle);
   cardContent.appendChild(cardDescription);
