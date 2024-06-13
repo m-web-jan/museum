@@ -1,27 +1,18 @@
 import "./style.scss";
-import data from "./exhibits.json";
 import { arrLang } from "../langData";
-
 let language = "ru";
+let data: any[];
 
 const cards = document
   .getElementsByClassName("cards")[0]
   .getElementsByClassName("container")[0];
 
-async function getCards() {
-  for (let i = 0; i < data.length; i++) {
-    fillCard(data[i]);
-  }
-}
-
-getCards();
 
 interface ICard {
-  title: string[];
-  description: string[];
-  century: string[];
+  name: string;
+  description: string;
   image: string;
-  properties: string[][];
+  properties: string[];
 }
 
 function fillCard(cardData: ICard) {
@@ -34,16 +25,16 @@ function fillCard(cardData: ICard) {
   cardImg.classList.add("img");
   cardImg.style.backgroundImage = `url(../images/${cardData.image})`;
   const cardTitle = document.createElement("p");
-  cardTitle.innerText = cardData.title[language === "ru" ? 0 : 1];
+  cardTitle.innerText = cardData.name;
 
   const cardContent = document.createElement("div");
   cardContent.classList.add("content");
   const cardDescription = document.createElement("p");
   cardDescription.innerHTML = cropText(
-    cardData.description[language === "ru" ? 0 : 1]
+    cardData.description
   );
   const cardCentury = document.createElement("h2");
-  cardCentury.innerText = cardData.century[language === "ru" ? 0 : 1];
+  cardCentury.innerText = cardData.properties[0];
 
   cardImg.appendChild(cardTitle);
   cardContent.appendChild(cardDescription);
@@ -61,24 +52,17 @@ function cropText(text: string) {
   }</p>`;
 }
 
-function reFillCards() {
-  cards.innerHTML = "";
-  for (let i = 0; i < data.length; i++) {
-    fillCard(data[i]);
-  }
-}
-
 // Открытие модального окна
 function openModal(cardData: ICard) {
   document.body.style.overflowY = "hidden";
   const modal = document.getElementsByClassName("modal")[0] as HTMLElement;
   modal.getElementsByTagName("img")[0].src = `../images/${cardData.image}`;
-  modal.getElementsByTagName("h2")[0].innerText = `${cardData.title[language === "ru" ? 0 : 1]}`;
-  modal.getElementsByTagName("p")[0].innerText = `${cardData.description[language === "ru" ? 0 : 1]}`;
+  modal.getElementsByTagName("h2")[0].innerText = `${cardData.name}`;
+  modal.getElementsByTagName("p")[0].innerText = `${cardData.description}`;
 
-  modal.getElementsByTagName("span")[0].innerText = `${cardData.properties[0][language === "ru" ? 0 : 1]}`;
-  modal.getElementsByTagName("span")[1].innerText = `${cardData.properties[1][language === "ru" ? 0 : 1]}`;
-  modal.getElementsByTagName("span")[2].innerText = `${cardData.properties[2][language === "ru" ? 0 : 1]}`;
+  modal.getElementsByTagName("span")[0].innerText = `${cardData.properties[0]}`;
+  modal.getElementsByTagName("span")[1].innerText = `${cardData.properties[1]}`;
+  modal.getElementsByTagName("span")[2].innerText = `${cardData.properties[2]}`;
 
   modal.style.display = "block";
   modal.onclick = (event) => {
@@ -186,7 +170,7 @@ document.body.onload = () => {
     tag.innerText = arrLang[currentLang][key];
   }
   language = currentLang;
-  reFillCards();
+  getCardsData(currentLang.toUpperCase());
 }
 
 function changeLang(e: Event) {
@@ -194,7 +178,7 @@ function changeLang(e: Event) {
   const lang = target.value as "ru";
   localStorage.setItem("lang", lang);
   language = lang;
-  reFillCards();
+  getCardsData(lang.toUpperCase());
   const allTags = document.getElementsByClassName("lang");
 
   for (let i = 0; i < allTags.length; i++) {
@@ -228,3 +212,20 @@ mobMenu.addEventListener('click', (e) => {
   }
 });
 // Открытие моб меню
+
+
+// Бэк
+async function getCardsData(lang: string) {
+  fetch(`http://localhost:3000/data?language=${lang}`)
+  .then((response) => response.json())
+  .then((responseData) => {
+    data = responseData;
+    cards.innerHTML = '';
+    for (let i = 0; i < data?.length; i++) {
+      fillCard(data[i]);
+    }
+  })
+  .catch((error) => console.error("Error fetching data:", error));
+}
+
+await getCardsData('RU');
