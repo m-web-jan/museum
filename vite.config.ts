@@ -10,6 +10,7 @@ export default defineConfig ({
         contacts: resolve(__dirname, "contacts/index.html"),
         tickets: resolve(__dirname, "ticket/index.html"),
         docs: resolve(__dirname, "docs/index.html"),
+        admin: resolve(__dirname, "admin/index.html"),
       },
     },
   },

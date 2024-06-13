@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../images/whiteLogo.png" />
+  <title>Admin</title>
+</head>
+<body>
+
+  <div class="container">
+    <form action="#">
+      <h2>Вход</h2>
+      <input type="text" placeholder="Логин">
+      <input type="text" placeholder="Пароль">
+      <button>Войти</button>
+    </form>
+  </div>
+
+  <div class="modal-back">
+    <form class="modal-content">
+      <h2>Добавление нового экспоната:</h2>
+      <input type="text" placeholder="Наименование" required id="name">
+      <input type="text" placeholder="Описание" required id="description">
+      <input type="file" required id="file">
+      <input type="text" placeholder="Век" required id="century">
+      <input type="text" placeholder="Материал" required id="material">
+      <input type="text" placeholder="Размеры (20x20см)" required id="sizes">
+      <select calue="RU" required>
+        <option value="RU">Руссикй</option>
+        <option value="BY">Белорусский</option>
+      </select>
+      <button type="submit" class="addNewItem">Добавить</button>
+    </form>
+  </div>
+
+  <script type="module" src="./admin.ts"></script>
+</body>
+</html>
